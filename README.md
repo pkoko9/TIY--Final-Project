@@ -8,4 +8,19 @@ To address these staffing inefficiencies, PRN Match will provide healthcare mana
 
 *TEMPORARY:  Developing and web application to allow contract rehabilitation healthcare professionals to post their credentials, availability, location and other criteria that will be searchable by rehab organizations in search of their skill set.*
 
+##User Stories##
+
+Link to user stories on Trelloe here.
+
+##Wireframes##
+
+Upload wireframe picutres here.
+
+##Models##
+
+Markdown list of all models, required data types and dependencies.
+
+##APIs, Plugins, Libraries and Frameworks##
+
+A list of all of the third-party tools and code you will need for your project as well as a short demo (with code) of you successfully using that tool.
 
