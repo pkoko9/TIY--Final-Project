@@ -6,11 +6,10 @@ As a large portion of our population cotinues to age, the demand for healthcare 
 
 We're taking a new approach to managing PRN staffing.  PRN Match will provide healthcare management companies (specifically, longterm care management organizations) with a web based repository of credentialed and company registered healthcare professionals searchable by location, credential type, availability and user rating.  Making this information easily and immediately availlable will reduce the inefficiencies associated with sourcing PRN employees in both planned and unplanned gap situations and allow patients to be treated per their defined treatment plan schedule.  
 
-*TEMPORARY:  Developing and web application to allow contract rehabilitation healthcare professionals to post their credentials, availability, location and other criteria that will be searchable by rehab organizations in search of their skill set.*
 
 ##User Stories##
 
-Link to user stories on Trelloe here.
+Link to user stories on Trello here.
 
 ##Wireframes##
 
