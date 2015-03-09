@@ -32,7 +32,7 @@ Below is a list of the two data models to be used with this project along with c
 
 *Password: string, unique: true, required:  true
 
-*Email:  string, unique: false, required:  true, validate on frot end via Angular
+*Email:  string, unique: false, required:  true, validate on front end via Angular
 
 *Phone: integer, unique: true, required:  true
 
@@ -42,15 +42,14 @@ Below is a list of the two data models to be used with this project along with c
 
 *Zip Code: integer, unique: false, required:  true
 
-*Active:  boolean, unique: false, required:  true
+*Active:  boolean, unique: false, required:  false
 
-*Companies_Registered_with: string, unique: false, required:  optional
 
 ####Companies####
 
 *ID: integer, unique: true, required:  true
 
-*Companies_Registered_with: string, unique: false, required:  optional
+*Companies_Registered_with: string, unique: false, required:  false
 
 ##APIs, Plugins, Libraries and Frameworks##
 
