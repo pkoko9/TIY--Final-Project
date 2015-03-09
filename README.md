@@ -21,7 +21,7 @@ https://cloud.githubusercontent.com/assets/10377924/6548238/4d3c0b18-c5c0-11e4-8
 
 List of all models, data types and dependencies:
 
-###PRN User Profiles###
+####PRN User Profiles####
 First_Name:  string, unique: false, required:  true
 
 Last_Name: string, unique: false, required:  true
@@ -46,7 +46,7 @@ Dates Available:  datetime, unique: false, required:  true
 
 Registered with: string, unique: false, required:  true
 
-###Hiring User Profiles###
+####Hiring User Profiles####
 First_Name:  string, unique: false, required:  true
 
 Last_Name: string, unique: false, required:  true
