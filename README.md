@@ -23,5 +23,18 @@ Markdown list of all models, required data types and dependencies.
 
 ##APIs, Plugins, Libraries and Frameworks##
 
-A list of all of the third-party tools and code you will need for your project as well as a short demo (with code) of you successfully using that tool.
+This project will use the following tools:
+
+*Angular for front end development
+*Sails as the back-end server
+*Underscore to facilitate filtering/sorting
+*Bower will provide the framework for the project
+
+##Contact##
+
+Should you have questions, suggestions or comments about this project, please contact me via email or linked in below.  Thanks!
+
+pkoko9@hotmail.com
+
+www.linkedin.com/in/paulkoko/en
 
