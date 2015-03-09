@@ -68,7 +68,7 @@ This project will use the following tools:
 
 *Angular for front end development
 
-*Sails as the back-end server]
+*Sails as the back-end server
 
 *Underscore to facilitate filtering/sorting
 
