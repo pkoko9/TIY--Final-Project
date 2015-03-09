@@ -9,7 +9,7 @@ We're taking a new approach to managing PRN staffing.  PRN Match will provide he
 
 ##User Stories##
 
-Link to user stories on Trello here.
+Link to user stories on Trello here:  https://trello.com/prnfinder
 
 ##Wireframes##
 
