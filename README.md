@@ -19,7 +19,7 @@ https://cloud.githubusercontent.com/assets/10377924/6548238/4d3c0b18-c5c0-11e4-8
 
 ##Models##
 
-List of all models, data types and dependencies:
+Below is a list of the two data models to be used with this project along with corresponding data types and dependencies.  There are no relationships between these two models:
 
 ####PRN User Profiles####
 *First_Name:  string, unique: false, required:  true
