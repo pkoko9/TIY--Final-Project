@@ -74,6 +74,8 @@ This project will use the following tools:
 
 *Bower will provide the framework for the project
 
+*Will use the validator plug in to verify user entries (email format, password credentials) upon submit
+
 ##Contact##
 
 Should you have questions, suggestions or comments about this project, please contact me via email or linked in below.  Thanks!
