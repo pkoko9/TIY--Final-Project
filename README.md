@@ -23,25 +23,42 @@ List of all models, data types and dependencies:
 
 ###PRN Users###
 First_Name:  string, unique: false, required:  true
+
 Last_Name: string, unique: false, required:  true
+
 User_ID: integer, unique: true, required:  true
+
 Password: string, unique: true, required:  true
+
 Email:  string, unique: false, required:  true, validate on frot end via Angular
+
 Phone: integer, unique: true, required:  true
+
 Primary credentials: string, unique: false, required:  true
+
 Secondary credentials: string, unique: false, required:  false
+
 Zip Code: integer, unique: false, required:  true
+
 Active:  boolean, unique: false, required:  true
+
 Dates Available:  datetime, unique: false, required:  true
+
 Registered with: string, unique: false, required:  true
 
 ###Hiring Users###
 First_Name:  string, unique: false, required:  true
+
 Last_Name: string, unique: false, required:  true
+
 User_ID: integer, unique: true, required:  true
+
 Password: string, unique: true, required:  true
+
 Email:  string, unique: false, required:  true, validate on frot end via Angular
+
 Phone: integer, unique: true, required:  true
+
 Zip Code: integer, unique: false, required:  true
 
 
