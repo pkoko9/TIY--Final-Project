@@ -22,44 +22,44 @@ https://cloud.githubusercontent.com/assets/10377924/6548238/4d3c0b18-c5c0-11e4-8
 List of all models, data types and dependencies:
 
 ####PRN User Profiles####
-First_Name:  string, unique: false, required:  true
+*First_Name:  string, unique: false, required:  true
 
-Last_Name: string, unique: false, required:  true
+*Last_Name: string, unique: false, required:  true
 
-User_ID: integer, unique: true, required:  true
+*User_ID: integer, unique: true, required:  true
 
-Password: string, unique: true, required:  true
+*Password: string, unique: true, required:  true
 
-Email:  string, unique: false, required:  true, validate on frot end via Angular
+*Email:  string, unique: false, required:  true, validate on frot end via Angular
 
-Phone: integer, unique: true, required:  true
+*Phone: integer, unique: true, required:  true
 
-Primary credentials: string, unique: false, required:  true
+*Primary credentials: string, unique: false, required:  true
 
-Secondary credentials: string, unique: false, required:  false
+*Secondary credentials: string, unique: false, required:  false
 
-Zip Code: integer, unique: false, required:  true
+*Zip Code: integer, unique: false, required:  true
 
-Active:  boolean, unique: false, required:  true
+*Active:  boolean, unique: false, required:  true
 
-Dates Available:  datetime, unique: false, required:  true
+*Dates Available:  datetime, unique: false, required:  true
 
-Registered with: string, unique: false, required:  true
+*Registered with: string, unique: false, required:  true
 
 ####Hiring User Profiles####
-First_Name:  string, unique: false, required:  true
+*First_Name:  string, unique: false, required:  true
 
-Last_Name: string, unique: false, required:  true
+*Last_Name: string, unique: false, required:  true
 
-User_ID: integer, unique: true, required:  true
+*User_ID: integer, unique: true, required:  true
 
-Password: string, unique: true, required:  true
+*Password: string, unique: true, required:  true
 
-Email:  string, unique: false, required:  true, validate on frot end via Angular
+*Email:  string, unique: false, required:  true, validate on frot end via Angular
 
-Phone: integer, unique: true, required:  true
+*Phone: integer, unique: true, required:  true
 
-Zip Code: integer, unique: false, required:  true
+*Zip Code: integer, unique: false, required:  true
 
 
 ##APIs, Plugins, Libraries and Frameworks##
