@@ -22,7 +22,8 @@ https://cloud.githubusercontent.com/assets/10377924/6548238/4d3c0b18-c5c0-11e4-8
 
 Below is a list of the two data models to be used with this project along with corresponding data types and dependencies.  The properties are unique to each model, therefire, there are no relationships between the models:
 
-####PRN User Profiles####
+####User Profiles####
+
 *First_Name:  string, unique: false, required:  true
 
 *Last_Name: string, unique: false, required:  true
@@ -31,37 +32,24 @@ Below is a list of the two data models to be used with this project along with c
 
 *Password: string, unique: true, required:  true
 
-*Email:  string, unique: false, required:  true, validate on frot end via Angular
+*Email:  string, unique: false, required:  true, validate on front end via Angular
 
 *Phone: integer, unique: true, required:  true
 
-*Primary credentials: string, unique: false, required:  true
+*Primary credentials: string, unique: false, required:  false
 
 *Secondary credentials: string, unique: false, required:  false
 
 *Zip Code: integer, unique: false, required:  true
 
-*Active:  boolean, unique: false, required:  true
+*Active:  boolean, unique: false, required:  false
 
-*Dates Available:  datetime, unique: false, required:  true
 
-*Registered with: string, unique: false, required:  true
+####Companies####
 
-####Hiring User Profiles####
-*First_Name:  string, unique: false, required:  true
+*ID: integer, unique: true, required:  true
 
-*Last_Name: string, unique: false, required:  true
-
-*User_ID: integer, unique: true, required:  true
-
-*Password: string, unique: true, required:  true
-
-*Email:  string, unique: false, required:  true, validate on frot end via Angular
-
-*Phone: integer, unique: true, required:  true
-
-*Zip Code: integer, unique: false, required:  true
-
+*Companies_Registered_with: string, unique: false, required:  false
 
 ##APIs, Plugins, Libraries and Frameworks##
 
