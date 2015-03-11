@@ -11,5 +11,12 @@
 	"Error.Passport.Email.Exists": "This email already exists. So try logging in.",
 	"Error.Passport.Username.Missing": "You need to supply a username",
 	"Error.Passport.Password.Missing": "Oh no, you haven't set a password yet!",
-	"Error.Passport.Generic": "Snap. Something went wrong with authorization."
+	"Error.Passport.Generic": "Snap. Something went wrong with authorization.",
+	"Error.Passport.Email.Missing": "You need to supply an email-address for verification",
+	"Error.Passport.FirstName.Missing": "The first name is missing",
+	"Error.Passport.LastName.Missing": "The last name is missing",
+	"Error.Passport.Phone.Invalid": "The phone number entered is not valid",
+	"Error.Passport.Credentials.Invalid": "No credentials selected",
+	"Error.Passport.CurrentlyAvailable.Invalid": "Availability not selected",
+	"Error.Passport.Zip.Invalid": "The zip code entered is invalid"
 }

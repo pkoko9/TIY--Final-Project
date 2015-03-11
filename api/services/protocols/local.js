@@ -25,7 +25,14 @@ var validator = require('validator');
 exports.register = function (req, res, next) {
   var email    = req.param('email')
     , username = req.param('username')
-    , password = req.param('password');
+    , password = req.param('password')
+    , firstname = req.param('firstName')
+    , lastname = req.param('lastName')
+    , phone = req.param('phone')
+    , zip = req.param('zip')
+    , credentials = req.param('credentials')
+    , active = req.param('currentlyAvailable')
+    , registrations = req.param('registrations');
 
   if (!email) {
     req.flash('error', 'Error.Passport.Email.Missing');
@@ -42,15 +49,69 @@ exports.register = function (req, res, next) {
     return next(new Error('No password was entered.'));
   }
 
+  if (!firstname) {
+    req.flash('error', 'Error.Passport.Firstname.Missing');
+    return next(new Error('No firstname was entered.'));
+  }
+
+   if (!lastname) {
+    req.flash('error', 'Error.Passport.Lastname.Missing');
+    return next(new Error('No lastname was entered.'));
+  }
+
+   if (!phone) {
+    req.flash('error', 'Error.Passport.Phone.Missing');
+    return next(new Error('No phone number was entered.'));
+  }
+
+   if (!zip) {
+    req.flash('error', 'Error.Passport.Zip.Missing');
+    return next(new Error('No zip code was entered.'));
+  }
+
+   if (!credentials) {
+    req.flash('error', 'Error.Passport.Credentails.Missing');
+    return next(new Error('No credentials were entered.'));
+  }
+
+  if (!active) {
+    req.flash('error', 'Error.Passport.Active.Missing');
+    return next(new Error('Availability not entered.'));
+  }
+
+ 
   User.create({
     username : username
   , email    : email
+  , firstname : firstname 
+  , lastname : lastname 
+  , phone : phone
+  , zip : zip
+  , credentials : credentials
+  , active : active
+  , registrations : registrations
   }, function (err, user) {
     if (err) {
+      console.log(err);
       if (err.code === 'E_VALIDATION') {
         if (err.invalidAttributes.email) {
           req.flash('error', 'Error.Passport.Email.Exists');
+        } else if(err.invalidAttributes.firstname) {
+          req.flash('error', 'Error.Passport.Firstname.Invalid');
+        } else if(err.invalidAttributes.lastname) {
+          req.flash('error', 'Error.Passport.LastName.Invalid');
+        } else if(err.invalidAttributes.phone) {
+          req.flash('error', 'Error.Passport.Phone.Invalid');
+        } else if(err.invalidAttributes.zip) {
+          req.flash('error', 'Error.Passport.Zip.Invalid');
+        } else if(err.invalidAttributes.credentials) {
+          req.flash('error', 'Error.Passport.Credentials.Invalid');
+        } else if(err.invalidAttributes.active) {
+          req.flash('error', 'Error.Passport.Active.Invalid');
+        } else if(err.invalidAttributes.registrations) {
+          req.flash('error', 'Error.Passport.Registrations.Invalid');
         } else {
+          console.log(err);
           req.flash('error', 'Error.Passport.User.Exists');
         }
       }

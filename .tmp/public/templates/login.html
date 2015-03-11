@@ -1,0 +1,32 @@
+<h1>LogIn</h1>
+
+<div ng-controller="loginCTRL">
+	
+	<form class='form'  ng-submit="login(email, password)">
+	
+		<div>Email</div>
+			<input type="text" ng-model="email" placeholder="pk23@gmail.com">
+	
+		<div>Password</div>
+			<input type="password" ng-model="password" placeholder="Enter your password">
+
+	
+		<button type="submit">Submit</button>
+
+	</form>
+
+	<div class='failMessages'>
+		<span ng-show = "pwFail">Please enter a password</span><br>
+		<span ng-show = "emailFail">Please enter a valid email address</span>
+	</div>
+
+	<div class='logInSuccessMessage'>
+		<span ng-show = "loginSuccess">Congratulations!  You have successfully logged in!</span>
+		<span ng-repeat = "error in loginFailure">{{ error }}</span>
+
+</div>
+
+<div ng-controller='cancelCTRL'>
+	<button type= 'button' ng-click='cancel()'>Cancel</button>
+</div>
+	

@@ -1,0 +1,64 @@
+<h1>Create Profile</h1>
+
+<div ng-controller="registerCTRL">
+	
+	<form class='form'  ng-submit="login(registerInput)">
+	
+		<div>First Name</div>
+		<input type="text" ng-model="registerInput.firstName" placeholder="Enter your First Name">
+
+		<div>Last Name</div>
+		<input type="text" ng-model="registerInput.lastName" placeholder="Enter your Last Name">
+
+		<div>Email</div>
+			<input type="text" ng-model="registerInput.email" placeholder="pk23@gmail.com">
+	
+		<div>Password</div>
+			<input type="password" ng-model="registerInput.password" placeholder="Enter your password">
+
+		<div>Phone</div>
+		<input type="number" ng-model="registerInput.phone" placeholder="Enter your phone number">
+
+		<div>Zip Code</div>
+		<input type="number" ng-model="registerInput.zip" placeholder="Enter your 5 digit zip code">
+
+		<div>Credentials</div>
+		<input list="disciplines" ng-model="registerInput.credentials" placeholder="Select your certification">
+			<datalist id="disciplines">
+				<option value="Not Applicable">
+				<option value="COTA">
+			  	<option value="LVN">
+			  	<option value="OTR">
+			  	<option value="PT">
+			  	<option value="PTA">
+				<option value="RN">
+				<option value="SLP">
+			</datalist> 
+
+	<div>Curently Active</div>
+		<input list="availability" ng-model="registerInput.currentlyAvailable" placeholder="Are you currently available for work?">
+			<datalist id="availability">
+				<option value="Not Applicable">
+				<option value="Yes">
+				<option value="No">
+			</datalist>
+
+	<div>Companies Registered With</div>
+			<input type="textbox" ng-model="registerInput.registrations" placeholder="Please list the comapneis you are currently registered with separating each with a comma.">
+
+		<button type="submit">Submit</button>
+	</form>
+
+		<span ng-show = "pwFail">Please enter a password</span><br>
+		<span ng-show = "emailFail">Please enter a valid email address</span>
+
+	<div class='RegisterStatusMessages'>
+		<span ng-show = "registerSuccess">Congratulations!  You have successfully registered!</span>
+		<span ng-repeat = "error in registerFailure">{{ error }}</span>
+	</div>
+	
+</div>
+
+<div ng-controller='cancelCTRL'>
+	<button type= 'button' ng-click='cancel()'>Cancel</button>
+</div>
