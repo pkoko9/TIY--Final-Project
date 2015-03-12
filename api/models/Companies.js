@@ -8,7 +8,7 @@
 module.exports = {
 
   attributes: {
-  	registrations: {type: 'string', required: false}
+  	registrations: {type: 'text', required: false}
 
   }
 };

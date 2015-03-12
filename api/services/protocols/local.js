@@ -88,7 +88,7 @@ exports.register = function (req, res, next) {
   , phone : phone
   , zip : zip
   , credentials : credentials
-  , active : active
+  , currentlyAvailable : active
   , registrations : registrations
   }, function (err, user) {
     if (err) {
@@ -96,9 +96,9 @@ exports.register = function (req, res, next) {
       if (err.code === 'E_VALIDATION') {
         if (err.invalidAttributes.email) {
           req.flash('error', 'Error.Passport.Email.Exists');
-        } else if(err.invalidAttributes.firstname) {
-          req.flash('error', 'Error.Passport.Firstname.Invalid');
-        } else if(err.invalidAttributes.lastname) {
+        } else if(err.invalidAttributes.firstName) {
+          req.flash('error', 'Error.Passport.FirstName.Invalid');
+        } else if(err.invalidAttributes.lastName) {
           req.flash('error', 'Error.Passport.LastName.Invalid');
         } else if(err.invalidAttributes.phone) {
           req.flash('error', 'Error.Passport.Phone.Invalid');
@@ -106,7 +106,7 @@ exports.register = function (req, res, next) {
           req.flash('error', 'Error.Passport.Zip.Invalid');
         } else if(err.invalidAttributes.credentials) {
           req.flash('error', 'Error.Passport.Credentials.Invalid');
-        } else if(err.invalidAttributes.active) {
+        } else if(err.invalidAttributes.currentlyAvailable) {
           req.flash('error', 'Error.Passport.Active.Invalid');
         } else if(err.invalidAttributes.registrations) {
           req.flash('error', 'Error.Passport.Registrations.Invalid');

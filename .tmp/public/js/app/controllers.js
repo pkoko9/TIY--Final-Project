@@ -15,9 +15,49 @@ angular.module('app.controllers', ['app.services'])
 
 })
 
-.controller('searchCTRL', function($scope){
+.controller('searchCTRL', function($scope, $http, $state){
+	
+	$scope.recoveredObject = {};
+		
+	$scope.searchSubmit = function() {
+		// $state.go('search');
+	
 
+		$http.get('/user')
+			.success(function(res){
+				console.log('success!');
+				console.log(res);
+				$scope.recoveredObject = (res)
+			// $scope.registerSuccess = true;
+
+			})
+	}
 })
+
+// Erikas get request code
+// .controller('stateCtrl', function($scope, $http, $state) {
+
+// 	$scope.stateSubmit = function() {
+// 		$state.go('elections');
+// 	}
+
+// 	// $scope.selection = function(position, options) {
+// 	// 	angular.forEach(options, function(governor, index) {
+// 	// 		if(position != index)
+// 	// 			governor.checked = false;
+// 	// 	})
+// 	// }
+
+// 	$scope.states = [];
+
+// 	$http.get('/options')
+// 		.success(function(states) {
+// 			console.log(states);
+// 			$scope.states = states;
+// 			});
+
+// })
+
 
 .controller('loginCTRL', function($scope, $http, $state){
 
@@ -41,8 +81,8 @@ angular.module('app.controllers', ['app.services'])
 			correctEmail = true;
 			// $scope.emailFail = false;
 		} else {
-				$scope.emailFail = true;
-				// correctEmail = false;
+			$scope.emailFail = true;
+			// correctEmail = false;
 		}
 
 		var input2 = validator.isNull(password);
@@ -51,10 +91,10 @@ angular.module('app.controllers', ['app.services'])
 			$scope.pwFail = true;
 			// correctPW = true;
 		}
-			else {
-				$scope.pwFail = false;
-				correctPW= true;
-			}
+		else {
+			$scope.pwFail = false;
+			correctPW= true;
+		}
 
 		if(correctEmail && correctPW) {
 			loginInput = {
@@ -62,17 +102,17 @@ angular.module('app.controllers', ['app.services'])
 				password: password
 			};
 
-		$http.post('/auth/local', loginInput)
+			$http.post('/auth/local', loginInput)
 			.success(function(res){
 				// console.log('success!');
 				// console.log(res.errors);
-			if(res.success) {
+			// if(res.success) {
 					$scope.loginSuccess=true;
 					$state.go('home');
-				}
-				else {
-					$scope.loginFailure = res.errors;
-				}
+				// }
+				// else {
+				// 	$scope.loginFailure = res.errors;
+				// }
 			});
 
 			$scope.email='';
@@ -116,8 +156,8 @@ angular.module('app.controllers', ['app.services'])
 			correctEmail = true;
 			// $scope.emailFail = false;
 		} else {
-				$scope.emailFail = true;
-				// correctEmail = false;
+			$scope.emailFail = true;
+			// correctEmail = false;
 		}
 
 		var input2 = !validator.isNull(registerInput.password);
@@ -126,44 +166,28 @@ angular.module('app.controllers', ['app.services'])
 			// $scope.pwFail = false;
 			correctPW = true;
 		}
-			else {
-				$scope.pwFail = true;
-				// correctPW= false;
-			}
+		else {
+			$scope.pwFail = true;
+			// correctPW= false;
+		}
 
 		if(correctEmail && correctPW) {
-			// $scope.registerInput = {
-			// 	// firstname: registerInput.firstName,
-			// 	// lastname: registerInput.lastName,
-			// 	// username: registerInput.email,
-			// 	// email: registerInput.email,
-			// 	// password: registerInput.password
-			// 	// phone: registerInput.phone,
-			// 	// zip: registerInput.zip,
-			// 	// credentials: registerInput.credentials,
-			// 	// active: registerInput.currentlyAvailable,
-			// 	// registrations: registerInput.registrations
-			// };
+
 			registerInput.username = registerInput.email;
 			$http.post('/auth/local/register', registerInput)
 			.success(function(res){
 				console.log('success!');
 				console.log(res);
-				if(res.success) {
-					$state.go('home');
-					$scope.registerSuccess=true;
-				}
-				else {
-					$scope.registerFailure = res.errors;
-				}
+				
+				$state.go('home');
 				$scope.registerSuccess = true;
-				// $scope.myLogout = false;
-				// $scope.myHome = false;
+				// $scope.myLogout = true;
+				// $scope.myHome = true;
 
-			})
+			});
 
-		$scope.email='';
-		$scope.password='';
+			$scope.email='';
+			$scope.password='';
 		}
 		console.log(registerInput);
 	};
@@ -185,10 +209,8 @@ angular.module('app.controllers', ['app.services'])
 		// console.log ('test logout click');
 		$http.post('/logout')
 		.success(function(response) {
-		if (response.success)
-			$state.go('landing');
-		})
+			if (response.success)
+				$state.go('landing');
+		});
 	}
-})
-
-
+});

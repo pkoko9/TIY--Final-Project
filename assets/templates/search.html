@@ -1,1 +1,110 @@
 <h1>Search Criteria</h1>
+
+<!-- 	<form id='form'ng-submit="pullRecords()">
+					
+		<input type="checkbox" ng-class="errorType" ng-model="imageURL" placeholder=" Image URL">
+			<span ng-bind="fail1"></span>
+					
+			<textarea type="text" ng-model="caption" placeholder="Image Caption"></textarea>
+				<span ng-bind="fail2"></span>					
+				<br> -->		
+<!-- Submit button click code -->
+<!-- 			<span class='buttons'>
+				<button id='cancel' ng-click="cancelClick()" type="submit">CANCEL</button>
+				<button id='add' type='submit' ng-click ="sendImage(imageURL, caption)"> <i class="ion-image"></i>ADD IMAGE</button>
+			</span><br><br><br>
+	</form> -->
+
+	<h2>Below are the registered PRN Profiles currently available based on your search criteria:</h2>
+
+	<form class = 'searchDisplay' ng-submit="searchSubmit()">	
+		<div class ='results'>
+			<ul ng-repeat="data in recoveredObject">
+				<li id="firstName">First Name: {{ data.firstname }}</li>
+				<li id="lastName">Last Name: {{ data.lastname }}</li>
+				<li id="phone">Phone: {{ data.phone }}</li>
+				<li id="zip">Zip Code: {{ data.zip }}</li>
+				<li id="credentials">Credentials: {{ data.credentials }}</li>
+				<li id="availability">Currently Available?: {{ data.currentlyAvailable }}</li>
+				<li id="registrations">Companies registered with: {{ data.registrations }}</li>
+			</ul>
+		</div>
+		
+		<div>
+			<button id='search' type='submit' ng-click ="sendData(filteredPRN)">Find PRNs</button>
+		</div>
+
+
+<!-- ERIKAS HTML TIED TO GET REQUEST
+
+	<form class="form" ng-submit="stateSubmit()">
+		<div> -->
+		<!-- Ideally, use ng-repeat to show the elections -->
+<!-- 			<div ng-repeat="state in states">
+				<span class="item item-checkbox">
+					<label class="checkbox">
+						<input type="checkbox" ng-model="governor.checked" ng-click="selection(index, options)">
+					</label>
+					<span>{{ state.candidate }}</span>
+				</span>
+			</div> -->
+
+			<!-- <span class="item item-checkbox">
+				<label class="checkbox">
+					<input type="checkbox" ng-model="state.governor" ng-click="selection()">
+				</label>
+				Bob Roberts
+			</span>
+			<span class="item item-checkbox">
+				<label class="checkbox">
+					<input type="checkbox" ng-model="state.governor" ng-click="selection()">
+				</label>
+				Sheila Lui
+			</span>
+			<span class="item item-checkbox">
+				<label class="checkbox">
+					<input type="checkbox" ng-model="state.governor" ng-click="selection()">
+				</label>
+				Rogger Rice
+			</span> -->
+<!-- 		</div>
+
+		<div>
+			<h3>For the race of</h3>
+			<h3>STATE REPRESENTATIVE</h3>
+		</div>
+		<div>
+			<div ng-repeat="state in states">
+				<span class="item item-checkbox">
+					<label class="checkbox">
+						<input type="checkbox" ng-model="representative.checked" ng-click="selection($index, options)">
+					</label>
+					<span>{{ state.candidate }}</span>
+				</span>
+			</div> -->
+		<!-- 	<span class="item item-checkbox">
+				<label class="checkbox">
+				<input type="checkbox" ng-model="state.representative" ng-click="selection()">
+				</label>
+				Adam Blakely
+			</span>
+			<span class="item item-checkbox">
+				<label class="checkbox">
+				<input type="checkbox" ng-model="state.representative" ng-click="selection()">
+				</label>
+				Ryan Pike
+			</span>
+			<span class="item item-checkbox">
+				<label class="checkbox">
+				<input type="checkbox" ng-model="state.representative" ng-click="selection()">
+				</label>
+				Sally Camp
+			</span> -->
+<!-- 		</div>
+			<br><br>
+		<div>
+		<button type="submit" value="submit">Submit</button>
+		</div>
+	</form>
+</div> -->
+

@@ -11,8 +11,8 @@ var User = {
 	phone: 			{ type: 'string',  unique: true },
 	zip: 			{ type: 'string',  unique: false },
 	credentials:    { type: 'string',  unique: false }, 
-	currentlyavailable: { type: 'boolean',  unique: false },
-	registrations: 	{ type: 'string',  unique: false, required: false } 
+	currentlyAvailable: { type: 'string',  unique: false },
+	registrations: 	{ type: 'text',  unique: false, required: false } 
   }
 };
 
