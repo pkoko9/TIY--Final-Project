@@ -51,8 +51,10 @@
 		<button type= 'button' class="btn btn-info btn-lg" ng-controller='cancelCTRL' ng-click='cancel()'>Cancel</button>
 	</form>
 
+	<div class = "error-messages">
 		<span ng-show = "pwFail">Please enter a password</span><br>
 		<span ng-show = "emailFail">Please enter a valid email address</span>
+	</div>
 
 	<div class='RegisterStatusMessages'>
 		<span ng-show = "registerSuccess">Congratulations!  You have successfully registered!</span>

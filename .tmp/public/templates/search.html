@@ -1,38 +1,47 @@
 <div class="search-header">Search Criteria<br>
-	<span>Please enter a hiring company to filter PRNs eligible to work for that company, and select the criteria below you wish to search by.  Press the "Find PRNs" button to display your search results.</span>
+	<span>Please enter the name of the company in need of PRN support and populate the fields below with those criteria you wish to search by.  Press the "Find PRNs" button to display your search results.</span>
 </div><br>
 
-<!-- <div id="filters">
-    <input type="checkbox" checked="checked" value="firstname" id="filter-firstname">First Name
-	<input type="checkbox" checked="checked" value="lastname" id="filter-lastname">Last Name
-    <input type="checkbox" checked="checked" value="credentials" id="filter-credentials">Credentials
-    <input type="checkbox" checked="checked" value="currentlyAvailable" id="filter-currentlyAvailable">Currently Available
-    <input type="checkbox" checked="checked" value="zipcode" id="filter-zipcode">Zip Code
-    <input type="text" placeholder="Enter hiring company Name" id="filter-companyRegistrations">Companies Registered With 
- <!   <input type="checkbox" checked="checked" value="zipcode" id="filter-zipcode"><label for="filter-zipcode">Availability</label> -->
-<!-- </div> -->
 
-<div class='search-criteria'>
+<form class='search-criteria'>
 	<label class="form-inline">Hiring company name:
 	  <input type="text" id="companySelect" placeholder="Enter hiring company">
 	</label><br><br>
-	<label class="checkbox-inline">
-	  <input type="checkbox" id="inlineCheckbox1" value="firstname"> First Name
-	</label>
-	<label class="checkbox-inline">
-	  <input type="checkbox" id="inlineCheckbox2" value="lastname"> Last Name
-	</label>
-	<label class="checkbox-inline">
-	  <input type="checkbox" id="inlineCheckbox3" value="credentials"> Credentials
-	</label>
-	<label class="checkbox-inline">
-	  <input type="checkbox" id="inlineCheckbox4" value="currentlyAvailable"> Current Availability
-	</label>
-<!-- 	<label class="checkbox-inline">
-	  <input type="checkbox" id="inlineCheckbox5" value="zip code"> Zip Code
-	</label> -->
-</div>
+	<form class='form'  ng-submit="login(registerInput)">
+	
+		<div>First Name</div>
+		<input type="text" class="form-control input-lg" ng-model="registerInput.firstName" placeholder="Enter your First Name">
 
+		<div>Last Name</div>
+		<input type="text" class="form-control input-lg" ng-model="registerInput.lastName" placeholder="Enter your Last Name">
+
+		<div>Zip Code</div>
+		<input type="number" class="form-control input-lg" ng-model="registerInput.zip" placeholder="Enter your 5 digit zip code">
+
+		<div>Credentials</div>
+		<input list="disciplines" class="form-control input-lg" ng-model="registerInput.credentials" placeholder="Select your certification">
+			<datalist id="disciplines">
+				<option value="Not Applicable">
+				<option value="COTA">
+			  	<option value="LVN">
+			  	<option value="OTR">
+			  	<option value="PT">
+			  	<option value="PTA">
+				<option value="RN">
+				<option value="SLP">
+			</datalist> 
+
+	<div>Currently Active</div>
+		<input list="availability" class="form-control input-lg" ng-model="registerInput.currentlyAvailable" placeholder="Are you currently available for work?">
+			<datalist id="availability">
+				<option value="Yes">
+				<option value="No">
+			</datalist><br>
+
+	</form>
+
+</form>
+	
 	<form class = 'searchDisplay' ng-submit="searchSubmit()">	
 		<div class ='results'>
 			<ul ng-repeat="data in recoveredObject">
@@ -44,12 +53,19 @@
 				<li id="availability">Currently Available?: {{ data.currentlyAvailable }}</li>
 				<li id="registrations">Companies registered with: {{ data.registrations }}</li>
 			</ul>
-		</div><br>
-
+			
 		<div class='submitButton'>
 			<button type='submit' class="btn btn-success btn-lg" ng-click ="sendData(filteredPRN)">Find PRNs</button>
 			<button type= 'button' class="btn btn-info btn-lg" ng-controller='cancelCTRL' ng-click='cancel()'>Cancel</button>
-		</div>
+		</div><br>
+
+
+		</div><br>
+
+<!-- 		<div class='submitButton'>
+			<button type='submit' class="btn btn-success btn-lg" ng-click ="sendData(filteredPRN)">Find PRNs</button>
+			<button type= 'button' class="btn btn-info btn-lg" ng-controller='cancelCTRL' ng-click='cancel()'>Cancel</button>
+		</div><br> -->
 	</form>
 		
 <!-- 	<div>
