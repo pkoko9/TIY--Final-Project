@@ -13,7 +13,95 @@
  * always omit, customize, or replace this behavior with SASS, SCSS,
  * or any other Grunt tasks you like.)
  */
-.test {
-  color: blue; }
+.nav-bar {
+  height: 3em;
+  background-color: #A7C3CF;
+  text-align: center;
+  border-top: solid black 1px;
+  border-bottom: solid black 1px; }
+
+.nav-bar a {
+  color: black;
+  font-size: 25px;
+  border-right: solid black 2px;
+  padding: 0 15px 0 15px; }
+
+.about {
+  font-size: 20px;
+  font-weight: 900;
+  padding: 10px 0 10px 0;
+  margin-left: 3px; }
+
+.home-text {
+  font-size: 16px;
+  background-color: #E3E1E1;
+  margin-top: 0;
+  padding: 0 30px 0 30px; }
+
+.banner {
+  height: 20em;
+  width: 100%;
+  background-image: url(https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRQrBmPHDWDdI8urAqVW149Wg1s9dhsVbAoWV3n47JWtE1kVzxkuw);
+  background-repeat: no-repeat;
+  background-size: 100% 100%; }
+
+.title {
+  font-size: 50px; }
+
+.banner h1 {
+  text-align: center;
+  margin-top: 0;
+  padding-top: 30px; }
+
+.fast {
+  font-style: italic;
+  text-decoration: underline;
+  font-weight: 900; }
+
+.form {
+  font-size: 16px;
+  background-color: #E3E1E1;
+  margin-top: 0;
+  padding: 0 300px 20px 300px; }
+
+.login-header {
+  font-size: 24px;
+  font-weight: 900;
+  text-align: center; }
+
+.form div {
+  font-size: 20px;
+  font-weight: 900; }
+
+.failMessages {
+  color: red;
+  font-size: 20px;
+  text-align: center; }
+
+.register-header {
+  font-size: 24px;
+  font-weight: 900;
+  text-align: center; }
+
+.registed-with input {
+  height: 5em; }
+
+.search-header {
+  font-size: 24px;
+  font-weight: 900;
+  text-align: center; }
+
+.search-header span {
+  font-size: 20px; }
+
+.search-criteria {
+  text-align: center;
+  font-size: 20px; }
+
+.search-criteria input {
+  font-size: 15px; }
+
+.submitButton {
+  text-align: center; }
 
 /*# sourceMappingURL=importer.css.map */

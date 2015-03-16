@@ -2,11 +2,11 @@ angular.module('app', ['app.controllers', 'ui.router'])
 .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 	$stateProvider
 	
-	.state('home', {
-		url: '/home',
-		templateUrl:'templates/home.html',
-		controller: 'homeCTRL'
-	})
+	// .state('home', {
+	// 	url: '/home',
+	// 	templateUrl:'templates/home.html',
+	// 	controller: 'homeCTRL'
+	// })
 	.state('login', {
 		url: '/login',
 		templateUrl:'templates/login.html',

@@ -1,29 +1,29 @@
-<h1>Create Profile</h1>
+<div class="register-header">Create Profile</div>
 
 <div ng-controller="registerCTRL">
 	
 	<form class='form'  ng-submit="login(registerInput)">
 	
 		<div>First Name</div>
-		<input type="text" ng-model="registerInput.firstName" placeholder="Enter your First Name">
+		<input type="text" class="form-control input-lg" ng-model="registerInput.firstName" placeholder="Enter your First Name">
 
 		<div>Last Name</div>
-		<input type="text" ng-model="registerInput.lastName" placeholder="Enter your Last Name">
+		<input type="text" class="form-control input-lg" ng-model="registerInput.lastName" placeholder="Enter your Last Name">
 
 		<div>Email</div>
-			<input type="text" ng-model="registerInput.email" placeholder="pk23@gmail.com">
+			<input type="text" class="form-control input-lg" ng-model="registerInput.email" placeholder="pk23@gmail.com">
 	
 		<div>Password</div>
-			<input type="password" ng-model="registerInput.password" placeholder="Enter your password">
+			<input type="password" class="form-control input-lg" ng-model="registerInput.password" placeholder="Enter your password">
 
 		<div>Phone</div>
-		<input type="number" ng-model="registerInput.phone" placeholder="Enter your phone number">
+		<input type="number" class="form-control input-lg" ng-model="registerInput.phone" placeholder="Enter your phone number">
 
 		<div>Zip Code</div>
-		<input type="number" ng-model="registerInput.zip" placeholder="Enter your 5 digit zip code">
+		<input type="number" class="form-control input-lg" ng-model="registerInput.zip" placeholder="Enter your 5 digit zip code">
 
 		<div>Credentials</div>
-		<input list="disciplines" ng-model="registerInput.credentials" placeholder="Select your certification">
+		<input list="disciplines" class="form-control input-lg" ng-model="registerInput.credentials" placeholder="Select your certification">
 			<datalist id="disciplines">
 				<option value="Not Applicable">
 				<option value="COTA">
@@ -36,17 +36,19 @@
 			</datalist> 
 
 	<div>Currently Active</div>
-		<input list="availability" ng-model="registerInput.currentlyAvailable" placeholder="Are you currently available for work?">
+		<input list="availability" class="form-control input-lg" ng-model="registerInput.currentlyAvailable" placeholder="Are you currently available for work?">
 			<datalist id="availability">
 				<option value="Not Applicable">
 				<option value="Yes">
 				<option value="No">
 			</datalist>
 
-	<div>Companies Registered With</div>
-			<input type="textbox" ng-model="registerInput.registrations" placeholder="Please list the comapneis you are currently registered with separating each with a comma.">
+	<div class="registered-with">Companies Registered With</div>
+			<input type="textbox" class="form-control input-lg" ng-model="registerInput.registrations" placeholder="Please list the companies you are currently registered with separating each with a comma. (i.e., RehabWorks, Harden Healthcare, etc."><br>
 
-		<button type="submit">Submit</button>
+		<button type="submit" class="btn btn-success btn-lg">Submit</button>
+		<button type="submit" class="btn btn-warning btn-lg">Edit Profile</button>
+		<button type= 'button' class="btn btn-info btn-lg" ng-controller='cancelCTRL' ng-click='cancel()'>Cancel</button>
 	</form>
 
 		<span ng-show = "pwFail">Please enter a password</span><br>
@@ -60,5 +62,5 @@
 </div>
 
 <div ng-controller='cancelCTRL'>
-	<button type= 'button' ng-click='cancel()'>Cancel</button>
+	
 </div>

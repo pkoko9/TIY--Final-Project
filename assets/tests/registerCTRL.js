@@ -1,4 +1,4 @@
-describe('RegisterCtrl', function() {
+describe('registerCTRL', function() {
 
     var $scope;
     var RegisterCtrl;
@@ -8,12 +8,12 @@ describe('RegisterCtrl', function() {
 
     beforeEach(inject(function($rootScope, $controller, $injector) {
         $scope = $rootScope.$new();
-        RegisterCtrl = $controller('RegisterCtrl', {$scope: $scope});
+        RegisterCtrl = $controller('registerCTRL', {$scope: $scope});
     }));
 
-    it('should require a username', function() {
+    it('should require a valid email address', function() {
         $scope.register({});
-        expect($scope.error.identifier).to.not.equal('');
+        expect($scope.error.identifier).to.not.equal('Please enter a valid email address');
     });
 
     // it('should not show errors if credentials are valid', function() {

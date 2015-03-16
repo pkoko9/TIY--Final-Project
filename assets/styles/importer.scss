@@ -29,6 +29,12 @@
 //
 // etc.
 
-.test {
-	color: blue;
-}
+@import 'landing.scss';
+@import 'homepage.scss';
+@import 'login.scss';
+@import 'register.scss';
+@import 'search.scss';
+
+// .test {
+// 	color: blue;
+// }

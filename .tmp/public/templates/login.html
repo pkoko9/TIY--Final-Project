@@ -1,17 +1,18 @@
-<h1>LogIn</h1>
+<div class = "login-header">Login</div>
 
 <div ng-controller="loginCTRL">
 	
 	<form class='form'  ng-submit="login(email, password)">
 	
 		<div>Email</div>
-			<input type="text" ng-model="email" placeholder="pk23@gmail.com">
+			<input type="text" class="form-control input-lg" ng-model="email" placeholder="pk23@gmail.com">
 	
 		<div>Password</div>
-			<input type="password" ng-model="password" placeholder="Enter your password">
+			<input type="password" class="form-control input-lg" ng-model="password" placeholder="Enter your password"><br>
 
 	
-		<button type="submit">Submit</button>
+		<button type="submit" class="btn btn-success btn-lg">Submit</button>
+		<button type= 'button' class="btn btn-info btn-lg" ng-controller='cancelCTRL' ng-click='cancel()'>Cancel</button>
 
 	</form>
 
@@ -26,7 +27,4 @@
 
 </div>
 
-<div ng-controller='cancelCTRL'>
-	<button type= 'button' ng-click='cancel()'>Cancel</button>
-</div>
 	

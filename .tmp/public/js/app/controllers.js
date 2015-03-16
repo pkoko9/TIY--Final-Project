@@ -5,13 +5,6 @@ angular.module('app.controllers', ['app.services'])
 })
 
 .controller('landingCTRL', function($scope, $state){
-	$scope.loginRoute = function() {
-		$state.go('login');
-	}
-
-	$scope.createProfileRoute = function() {
-		$state.go('register');
-	}
 
 })
 
@@ -33,31 +26,6 @@ angular.module('app.controllers', ['app.services'])
 			})
 	}
 })
-
-// Erikas get request code
-// .controller('stateCtrl', function($scope, $http, $state) {
-
-// 	$scope.stateSubmit = function() {
-// 		$state.go('elections');
-// 	}
-
-// 	// $scope.selection = function(position, options) {
-// 	// 	angular.forEach(options, function(governor, index) {
-// 	// 		if(position != index)
-// 	// 			governor.checked = false;
-// 	// 	})
-// 	// }
-
-// 	$scope.states = [];
-
-// 	$http.get('/options')
-// 		.success(function(states) {
-// 			console.log(states);
-// 			$scope.states = states;
-// 			});
-
-// })
-
 
 .controller('loginCTRL', function($scope, $http, $state){
 
@@ -108,7 +76,7 @@ angular.module('app.controllers', ['app.services'])
 				// console.log(res.errors);
 			// if(res.success) {
 					$scope.loginSuccess=true;
-					$state.go('home');
+					$state.go('landing');
 				// }
 				// else {
 				// 	$scope.loginFailure = res.errors;
@@ -179,7 +147,7 @@ angular.module('app.controllers', ['app.services'])
 				console.log('success!');
 				console.log(res);
 				
-				$state.go('home');
+				$state.go('landing');
 				$scope.registerSuccess = true;
 				// $scope.myLogout = true;
 				// $scope.myHome = true;
@@ -205,12 +173,19 @@ angular.module('app.controllers', ['app.services'])
 })
 
 .controller('NavCtrl', function($scope, $http, $state){
+	
 	$scope.logOut = function () {
 		// console.log ('test logout click');
 		$http.post('/logout')
 		.success(function(response) {
 			if (response.success)
-				$state.go('landing');
-		});
+				$state.go('landing')
+		})
 	}
-});
+	$scope.loginRoute = function() {
+		$state.go('login');
+	}
+	$scope.createProfileRoute = function() {
+		$state.go('register');
+	}
+})

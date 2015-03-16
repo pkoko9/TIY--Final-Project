@@ -1,21 +1,37 @@
-<h1>Search Criteria</h1>
+<div class="search-header">Search Criteria<br>
+	<span>Please enter a hiring company to filter PRNs eligible to work for that company, and select the criteria below you wish to search by.  Press the "Find PRNs" button to display your search results.</span>
+</div><br>
 
-<!-- 	<form id='form'ng-submit="pullRecords()">
-					
-		<input type="checkbox" ng-class="errorType" ng-model="imageURL" placeholder=" Image URL">
-			<span ng-bind="fail1"></span>
-					
-			<textarea type="text" ng-model="caption" placeholder="Image Caption"></textarea>
-				<span ng-bind="fail2"></span>					
-				<br> -->		
-<!-- Submit button click code -->
-<!-- 			<span class='buttons'>
-				<button id='cancel' ng-click="cancelClick()" type="submit">CANCEL</button>
-				<button id='add' type='submit' ng-click ="sendImage(imageURL, caption)"> <i class="ion-image"></i>ADD IMAGE</button>
-			</span><br><br><br>
-	</form> -->
+<!-- <div id="filters">
+    <input type="checkbox" checked="checked" value="firstname" id="filter-firstname">First Name
+	<input type="checkbox" checked="checked" value="lastname" id="filter-lastname">Last Name
+    <input type="checkbox" checked="checked" value="credentials" id="filter-credentials">Credentials
+    <input type="checkbox" checked="checked" value="currentlyAvailable" id="filter-currentlyAvailable">Currently Available
+    <input type="checkbox" checked="checked" value="zipcode" id="filter-zipcode">Zip Code
+    <input type="text" placeholder="Enter hiring company Name" id="filter-companyRegistrations">Companies Registered With 
+ <!   <input type="checkbox" checked="checked" value="zipcode" id="filter-zipcode"><label for="filter-zipcode">Availability</label> -->
+<!-- </div> -->
 
-	<h2>Below are the registered PRN Profiles currently available based on your search criteria:</h2>
+<div class='search-criteria'>
+	<label class="form-inline">Hiring company name:
+	  <input type="text" id="companySelect" placeholder="Enter hiring company">
+	</label><br><br>
+	<label class="checkbox-inline">
+	  <input type="checkbox" id="inlineCheckbox1" value="firstname"> First Name
+	</label>
+	<label class="checkbox-inline">
+	  <input type="checkbox" id="inlineCheckbox2" value="lastname"> Last Name
+	</label>
+	<label class="checkbox-inline">
+	  <input type="checkbox" id="inlineCheckbox3" value="credentials"> Credentials
+	</label>
+	<label class="checkbox-inline">
+	  <input type="checkbox" id="inlineCheckbox4" value="currentlyAvailable"> Current Availability
+	</label>
+<!-- 	<label class="checkbox-inline">
+	  <input type="checkbox" id="inlineCheckbox5" value="zip code"> Zip Code
+	</label> -->
+</div>
 
 	<form class = 'searchDisplay' ng-submit="searchSubmit()">	
 		<div class ='results'>
@@ -28,83 +44,20 @@
 				<li id="availability">Currently Available?: {{ data.currentlyAvailable }}</li>
 				<li id="registrations">Companies registered with: {{ data.registrations }}</li>
 			</ul>
-		</div>
-		
-		<div>
-			<button id='search' type='submit' ng-click ="sendData(filteredPRN)">Find PRNs</button>
-		</div>
+		</div><br>
 
-
-<!-- ERIKAS HTML TIED TO GET REQUEST
-
-	<form class="form" ng-submit="stateSubmit()">
-		<div> -->
-		<!-- Ideally, use ng-repeat to show the elections -->
-<!-- 			<div ng-repeat="state in states">
-				<span class="item item-checkbox">
-					<label class="checkbox">
-						<input type="checkbox" ng-model="governor.checked" ng-click="selection(index, options)">
-					</label>
-					<span>{{ state.candidate }}</span>
-				</span>
-			</div> -->
-
-			<!-- <span class="item item-checkbox">
-				<label class="checkbox">
-					<input type="checkbox" ng-model="state.governor" ng-click="selection()">
-				</label>
-				Bob Roberts
-			</span>
-			<span class="item item-checkbox">
-				<label class="checkbox">
-					<input type="checkbox" ng-model="state.governor" ng-click="selection()">
-				</label>
-				Sheila Lui
-			</span>
-			<span class="item item-checkbox">
-				<label class="checkbox">
-					<input type="checkbox" ng-model="state.governor" ng-click="selection()">
-				</label>
-				Rogger Rice
-			</span> -->
-<!-- 		</div>
-
-		<div>
-			<h3>For the race of</h3>
-			<h3>STATE REPRESENTATIVE</h3>
-		</div>
-		<div>
-			<div ng-repeat="state in states">
-				<span class="item item-checkbox">
-					<label class="checkbox">
-						<input type="checkbox" ng-model="representative.checked" ng-click="selection($index, options)">
-					</label>
-					<span>{{ state.candidate }}</span>
-				</span>
-			</div> -->
-		<!-- 	<span class="item item-checkbox">
-				<label class="checkbox">
-				<input type="checkbox" ng-model="state.representative" ng-click="selection()">
-				</label>
-				Adam Blakely
-			</span>
-			<span class="item item-checkbox">
-				<label class="checkbox">
-				<input type="checkbox" ng-model="state.representative" ng-click="selection()">
-				</label>
-				Ryan Pike
-			</span>
-			<span class="item item-checkbox">
-				<label class="checkbox">
-				<input type="checkbox" ng-model="state.representative" ng-click="selection()">
-				</label>
-				Sally Camp
-			</span> -->
-<!-- 		</div>
-			<br><br>
-		<div>
-		<button type="submit" value="submit">Submit</button>
+		<div class='submitButton'>
+			<button type='submit' class="btn btn-success btn-lg" ng-click ="sendData(filteredPRN)">Find PRNs</button>
+			<button type= 'button' class="btn btn-info btn-lg" ng-controller='cancelCTRL' ng-click='cancel()'>Cancel</button>
 		</div>
 	</form>
-</div> -->
+		
+<!-- 	<div>
+		<button type='submit' class="btn btn-success btn-lg"ng-click ="sendData(filteredPRN)">Find PRNs</button>
+		<button type= 'button' class="btn btn-info btn-lg" ng-controller='cancelCTRL' ng-click='cancel()'>Cancel</button>
+	</div> -->
+
+
+
+
 
