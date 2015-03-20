@@ -10,21 +10,58 @@ angular.module('app.controllers', ['app.services'])
 
 .controller('searchCTRL', function($scope, $http, $state){
 	
-	$scope.recoveredObject = {};
+	$scope.completeArray = [];
+	$scope.recoveredObject = [];
 		
 	$scope.searchSubmit = function() {
 		// $state.go('search');
 	
-
-		$http.get('/user')
+		$http.get('/user?registrations=' + $scope.registrations)
 			.success(function(res){
-				console.log('success!');
 				console.log(res);
 				$scope.recoveredObject = (res)
 			// $scope.registerSuccess = true;
 
 			})
+
+		$scope.completeArray = _.sortBy($scope.completeArray, function(element) {
+			return element.firstname;
+		})
+
+		$scope.recoveredObject = _.sortBy($scope.completeArray, function(element) {
+			return element.firstname;
+			console.log($scope.recoveredObject);
+		})
+
+
 	}
+
+		$scope.$watch('filterBy1', function(){
+	 		$scope.recoveredObject=_.filter($scope.recoveredObject, function(element) {
+	 		return element.firstname.toLowerCase().indexOf($scope.filterBy1.toLowerCase()) === 0;	
+			// return element.firstname.toLowerCase().indexOf($scope.filterBy1.toLowerCase()) === 0 ||
+			// element.lastname.toLowerCase().indexOf($scope.filterBy1.toLowerCase()) === 0;
+
+			});
+
+		});
+
+		$scope.$watch('filterBy2', function(){
+	 		$scope.recoveredObject=_.filter($scope.recoveredObject, function(element) {
+			return element.lastname.toLowerCase().indexOf($scope.filterBy2.toLowerCase()) === 0;
+
+			});
+
+		});
+
+		$scope.$watch('filterBy3', function(){
+	 		$scope.recoveredObject=_.filter($scope.recoveredObject, function(element) {
+			return element.credentials.toLowerCase().indexOf($scope.filterBy3.toLowerCase()) === 0;
+
+			});
+
+		});
+
 })
 
 .controller('loginCTRL', function($scope, $http, $state){

@@ -1,23 +1,61 @@
-.banner {
-	height: 20em;
-	width: 100%;
-	background-image: url(https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRQrBmPHDWDdI8urAqVW149Wg1s9dhsVbAoWV3n47JWtE1kVzxkuw);
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
+
+.home-header {
+	// height: 10em;
+	text-align: center;
+	border-bottom: solid black 1px;
+	background-color: #FCFFFF;
+}
+
+.home-header img {
+	height: 50%;
+	padding-top: 50px;
+}
+
+.text-header {
+	text-align: center;
+	font-family: verdana;
+}
+
+.text-header span {
+	font-weight: 900;
+	font-style: italic;
 }
 
 .title {
 	font-size: 50px;
 }
 
-.banner h1{
-	text-align: center;
-	margin-top: 0;
-	padding-top: 30px;
-}
-
 .fast {
 	font-style: italic;
 	text-decoration: underline;
 	font-weight: 900;
+}
+
+@media(min-width: 768px){
+	.home-header img {
+		height: 15em;
+		display: inline-block;
+		padding-top: 0;
+		padding-bottom: 50px;
+
+	}
+
+	.home-header {
+		overflow: hidden;
+	}
+
+	.move-text {
+		display: inline-block;
+		padding-top: 100px;
+	}
+
+	.move-text h3{
+		font-size: 30px; 
+	}
+
+	.move-text p{
+		font-size: 20px; 
+	}
+
+
 }
