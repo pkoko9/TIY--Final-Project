@@ -1,23 +1,8 @@
 angular.module('app', ['app.controllers', 'ui.router', 'app.services'])
 
-// .run(function($http, User) {
-// 	$http.get('/auth/user')
-// 	.success(function(user) {
-// 		User.setLoggedInUser(user);
-// 	})
-// 	.error(function(err) {
-// 		console.log(err);
-// 	});
-// })
-
 .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 	$stateProvider
 	
-	// .state('home', {
-	// 	url: '/home',
-	// 	templateUrl:'templates/home.html',
-	// 	controller: 'homeCTRL'
-	// })
 	.state('login', {
 		url: '/login',
 		templateUrl:'templates/login.html',
@@ -30,31 +15,17 @@ angular.module('app', ['app.controllers', 'ui.router', 'app.services'])
 	})
 
 	.state('landing', {
-	url: '/landing',
-	templateUrl:'templates/landing.html',
-	controller: 'landingCTRL'
+		url: '/landing',
+		templateUrl:'templates/landing.html',
+		controller: 'landingCTRL'
 	})
 
 	.state('search', {
-	url: '/search',
-	templateUrl:'templates/search.html',
-	controller: 'searchCTRL'
+		url: '/search',
+		templateUrl:'templates/search.html',
+		controller: 'searchCTRL'
 	})
 
 	$urlRouterProvider.otherwise('/landing');
 
 });
-
-// Log In Validation Code frm Aaron
-
-// angular.module('app', ['app.controllers', 'app.services'])
-// .run(function($http, User) {
-// 	$http.get('/auth/user')
-// 	.success(function(user) {
-// 		User.setLoggedInUser(user);
-// 	})
-// 	.error(function(err) {
-// 		console.log(err);
-// 	});
-// })
-// .config(function())

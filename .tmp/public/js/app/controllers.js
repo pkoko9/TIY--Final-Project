@@ -11,16 +11,13 @@ angular.module('app.controllers', ['app.services'])
 .controller('searchCTRL', function($scope, $http, $state){
 	
 	$scope.allUsers = [];
-	// $scope.filteredUsers = [];
 		
 	$scope.searchSubmit = function() {
-		// $state.go('search');
 	
 		$http.get('/user?registrations=' + $scope.registrations)
 			.success(function(res){
 				// console.log(res);
 				$scope.allUsers = (res);
-			// $scope.registerSuccess = true;
 				$scope.filters = true;
 				$scope.tableRender = true;
 				$scope.searchButton = true;
@@ -29,106 +26,9 @@ angular.module('app.controllers', ['app.services'])
 
 			})
 
-		// $scope.recoveredObject = _.sortBy($scope.recoveredObject, function(element) {
-		// 	return element.currentlyAvailable;
-		// 	console.log($scope.recoveredObject);
-		// })
-
-		// $scope.completeArray = _.sortBy($scope.recoveredObject, function(element) {
-		// 	return element.credentials;
-		// 	console.log($scope.completeArray);
-		// })
 	}
 
-		// $scope.$watch('filterBy1', function(){
-	 // 		$scope.recoveredObject=_.filter($scope.recoveredObject, function(element) {
-	 // 		return element.credentials.indexOf($scope.filterBy1) === 0;	
-		// 	// return element.firstname.toLowerCase().indexOf($scope.filterBy1.toLowerCase()) === 0 ||
-		// 	// element.lastname.toLowerCase().indexOf($scope.filterBy1.toLowerCase()) === 0;
-
-		// 	});
-
-		// });
-
-		// $scope.$watch('filterBy2', function(){
-	 // 		$scope.recoveredObject=_.filter($scope.recoveredObject, function(element) {
-		// 	return element.currentlyAvailable.indexOf($scope.filterBy2) === 0;
-
-		// 	});
-
-		// });
-
-		// $scope.$watch('filterBy3', function(){
-	 // 		$scope.recoveredObject=_.filter($scope.recoveredObject, function(element) {
-		// 	return element.credentials.toLowerCase().indexOf($scope.filterBy3.toLowerCase()) === 0;
-
-		// 	});
-
-		// });
 })
-
-// .controller('searchCTRL', function($scope, $http, $state){
-	
-// 	$scope.completeArray = [];
-// 	$scope.recoveredObject = [];
-// 	$scope.filterBy1 = '';
-// 	$scope.filterBy2 = '';
-		
-// 	$scope.searchSubmit = function() {
-// 		// $state.go('search');
-	
-// 		$http.get('/user?registrations=' + $scope.registrations)
-// 			.success(function(res){
-// 				// console.log(res);
-// 				$scope.recoveredObject = (res)
-// 			// $scope.registerSuccess = true;
-				// $scope.filters = true;
-				// $scope.tableRender = true;
-				// $scope.searchButton = true;
-
-// 			})
-
-// 		$scope.completeArray = _.sortBy($scope.completeArray, function(element) {
-// 			return element.firstname;
-// 		})
-
-// 		$scope.recoveredObject = _.sortBy($scope.completeArray, function(element) {
-// 			return element.firstname;
-// 			console.log($scope.recoveredObject);
-// 		})
-
-// 		// $scope.recoveredObject = _.sortBy($scope.recoveredObject, function(element) {
-// 		// 	return element.firstname;
-// 		// })
-
-// 		// $scope.completeArray = _.sortBy($scope.recoveredObject, function(element) {
-// 		// 	return element.firstname + element.lastname + element.phone +
-// 		// 	element.credentials + element.currentlyAvailable + element.registrations;
-// 		// 	console.log($scope.recoveredObject);
-// 		// })
-
-
-// 	}
-
-// 		$scope.$watch('filterBy1', function(){
-// 	 		$scope.completeArray=_.filter($scope.recoveredObject, function(element) {
-// 	 		return element.currentlyAvailable.toLowerCase().indexOf($scope.filterBy1.toLowerCase()) === 0;
-// 			// return element.firstname.toLowerCase().indexOf($scope.filterBy1.toLowerCase()) === 0 ||
-// 			// element.lastname.toLowerCase().indexOf($scope.filterBy1.toLowerCase()) === 0;
-
-// 			});
-
-// 		});
-
-// 		$scope.$watch('filterBy2', function(){
-// 	 		$scope.completeArray=_.filter($scope.recoveredObject, function(element) {
-// 			return element.credentials.toLowerCase().indexOf($scope.filterBy2.toLowerCase()) === 0;
-
-// 			});
-
-// 		});
-
-// })
 
 .controller('loginCTRL', function($scope, $http, $state){
 
@@ -143,13 +43,10 @@ angular.module('app.controllers', ['app.services'])
 	$scope.registerFailure = [];
 	$scope.test = false;
 	$scope.navRegister = false;
-	// $scope.myHome=true;
-	// $scope.myLogout=true;
-
 
 	$scope.login = function(email, password) {
 		var input1 = validator.isEmail(email);
-		// console.log (input1);
+
 		if (input1) {
 			correctEmail = true;
 			// $scope.emailFail = false;
@@ -159,7 +56,7 @@ angular.module('app.controllers', ['app.services'])
 		}
 
 		var input2 = validator.isNull(password);
-		// console.log (input2);
+
 		if (input2) {
 			$scope.pwFail = true;
 			// correctPW = true;
@@ -177,15 +74,10 @@ angular.module('app.controllers', ['app.services'])
 
 			$http.post('/auth/local', loginInput)
 			.success(function(res){
-				// console.log('success!');
 				// console.log(res);
 				if(res) {
-					// console.log(res);
-					// $scope.loginSuccess=true;
-					// $scope.test = false;
 					$state.go('landing');
 					console.log('successful login!')
-					// $scope.navRegister = false;
 
 				}
 				else {
@@ -197,8 +89,7 @@ angular.module('app.controllers', ['app.services'])
 
 			$scope.email='';
 			$scope.password='';
-			// $scope.myHome=false;
-			// $scope.myLogout=false;
+
 		}
 		console.log(loginInput);
 	};
@@ -223,15 +114,12 @@ angular.module('app.controllers', ['app.services'])
 	};
 	$scope.emailFail = false;
 	$scope.pwFail = false;
-	// $scope.myHome=false;
-	// $scope.myLogout=false;
-
 
 	$scope.login = function(registerInput) {
 		console.log('login');
 
 		var input1 = validator.isEmail(registerInput.email);
-		// console.log (input1);
+
 		if (input1) {
 			correctEmail = true;
 			// $scope.emailFail = false;
@@ -241,7 +129,7 @@ angular.module('app.controllers', ['app.services'])
 		}
 
 		var input2 = !validator.isNull(registerInput.password);
-		// console.log (input2);
+
 		if (input2) {
 			// $scope.pwFail = false;
 			correctPW = true;
@@ -261,9 +149,6 @@ angular.module('app.controllers', ['app.services'])
 				
 				$state.go('landing');
 				$scope.registerSuccess = true;
-				// $scope.myLogout = true;
-				// $scope.myHome = true;
-
 			});
 
 			$scope.email='';
@@ -276,7 +161,6 @@ angular.module('app.controllers', ['app.services'])
 
 .controller('cancelCTRL', function($scope, $state){
 	$scope.cancel = function () {
-		// console.log ('test cancel click');
 		$scope.email='';
 		$scope.password='';
 		$state.go('landing');
@@ -286,15 +170,6 @@ angular.module('app.controllers', ['app.services'])
 
 .controller('NavCtrl', function($scope, $http, $state, $rootScope){
 	
-	// $scope.isLoggedIn = User.isLoggedIn();
-	// $scope.user = User.getInfo();
-	// $rootScope.$on('LOGIN_EVENT', function() {
-	// 	$scope.isLoggedIn = User.isLoggedIn();
-	// 	$scope.user = User.getInfo();
-	// 	console.log('LOGIN HAPPENED');
-	// 	console.log($scope.isLoggedIn);
-	// });
-
 	$scope.logOut = function () {
 		// console.log ('test logout click');
 		$http.post('/logout')

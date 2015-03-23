@@ -3,15 +3,16 @@
 
     <div class = "search-wrapper">
         <div class="search-header">PRN Search<br>
-            <ol>
-                <li class = "text-line-one">Enter the company in need of PRN support</li>
-                <li class = "text-line-two">Press "Find PRNs" to display your results</li>
-            </ol>
+            <div>
+                <div class = "text-line-one">&nbsp;&nbsp;&nbsp;&nbsp;1. Enter company in need of PRN support</div>
+                <div class = "text-line-two">2. Press "Find PRNs" to display results</div>
+            </div>
         </div><br>
 
 
         <form class='search-criteria'>
-           Company name<input type="text" class = "form-control" ng-model = "registrations" id="companySelect" placeholder="Enter hiring company">
+           <div>Company Name</div>
+           <input type="text" class = "form-control" ng-model = "registrations" id="companySelect" placeholder="Enter hiring company">
 
             <br><button id = "search-button" ng-hide="searchButton" type='button' ng-click = "searchSubmit()" class="btn btn-success btn-default">Find PRNs</button>
             <button id = "search-cancel-button" ng-hide="searchButton" type= 'button' class="btn btn-link btn-default" ng-controller='cancelCTRL' ng-click='cancel()'>Cancel</button>
@@ -20,14 +21,14 @@
 
         <form class = "filters" ng-show="table-filters">
 
-            Availability<!-- <input id = "filter-availability" class = "form-control" list='availability' placeholder='Filter by availability' ng-model='filterBy1'>-->
+            Availability
                 <select id="availability" ng-model='filterBy1'> 
                     <option value="!!">Both</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
 
-            Certification<!--<input id ="filter-certs" list="disciplines" class="form-control" ng-model="filterBy2" placeholder="Filter by certification">-->
+            Certification
                 <select id="disciplines" ng-model='filterBy2'>
                     <option value="!!">All</option>
                     <option value="COTA">COTA</option>
@@ -39,7 +40,7 @@
                     <option value="SLP">SLP</option>
                 </select> 
 
-        </form><br>
+        </form><br><br>
 
             <div ng-show="tableRender" id='searchTable'>
                 <table class="table table-border table-hover table-condensed table-responsive">
@@ -49,7 +50,6 @@
                         <th class='lastName'>Last</th>
                         <th class='phone'>Phone</th>
                         <th class='credentials'>Certification</th>
-        <!--                     <th class='zip'>Zip Code</th> -->
                         <th class='availability'>Availability</th>
                         <th class='registrations'>Company Registrations</th>
                     </tr>
@@ -60,7 +60,6 @@
                         <td> {{ user.lastname }}</td>
                         <td> {{ user.phone }}</td>
                         <td> {{ user.credentials }}</td>
-        <!--                     <td class='zip'> {{ data.zip }}</td> -->
                         <td class= 'availability'> {{ user.currentlyAvailable }}</td>
                         <td class= 'registrations'> {{ user.registrations }}</td>  
                     </tr>

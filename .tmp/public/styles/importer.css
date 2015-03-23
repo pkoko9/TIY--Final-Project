@@ -82,14 +82,12 @@
   background-color: #90CED6;
   color: #30488C;
   height: 34em; }
-.login-css .form {
+.login-css form {
   font-size: 16px;
-  margin-top: 0;
-  margin: 0 50px 0 50px;
+  margin: 0 auto;
   max-width: 300px;
-  min-width: 200px;
-  align: center; }
-.login-css .form input {
+  float: none; }
+.login-css form input {
   margin-bottom: 15px; }
 .login-css .login-header {
   font-size: 24px;
@@ -106,8 +104,9 @@
 .login-css #login-cancel {
   color: #E01409; }
 @media (min-width: 768px) {
-  .login-css .form {
-    max-width: 300px; } }
+  .login-css form {
+    width: 300px;
+    float: none; } }
 
 .register-css .register-wrapper {
   background-color: #90CED6;
@@ -121,7 +120,6 @@
 .register-css #registered-with {
   font-size: 16px;
   margin-top: 0;
-  margin: 0 50px 0 50px;
   max-width: 300px;
   min-width: 200px;
   margin-bottom: 15px; }
@@ -133,8 +131,6 @@
   margin-top: 0;
   min-width: 200px;
   margin-bottom: 15px; }
-.register-css .form div {
-  margin: 0 50px 0 50px; }
 .register-css #submit-button {
   margin-left: 50px;
   background-color: #9FCC58;
@@ -159,32 +155,34 @@
   .search-css .search-wrapper {
     background-color: #90CED6;
     color: #30488C;
-    height: 100em; }
+    height: 100em;
+    margin: 0 auto;
+    text-align: center; }
   .search-css .search-header {
     font-size: 24px;
     font-weight: 900;
-    text-align: center;
-    color: #30488C; }
-  .search-css .search-header li {
+    padding-top: 20px; }
+  .search-css .text-line-one, .search-css .text-line-two {
     font-size: 16px;
-    font-weight: 400;
-    text-align: left;
-    color: #30488C; }
-  .search-css .search-criteria {
+    font-weight: 400; }
+  .search-css .text-line-one {
+    padding-top: 20px; }
+  .search-css .search-criteria, .search-css .filters {
     font-size: 16px;
-    margin-top: 0;
-    margin: 0 50px 0 50px;
-    max-width: 300px;
-    min-width: 200px; }
+    margin: 0 auto;
+    max-width: 300px; }
+  .search-css .search-criteria div {
+    text-align: left; }
   .search-css .filters {
     font-size: 16px;
-    margin-top: 0;
-    margin: 0 50px 0 50px;
+    margin: 0 auto;
     max-width: 300px;
-    min-width: 200px; }
+    display: inline; }
   .search-css #searchTable {
-    padding: 0 80px 0 80px;
+    padding: 0 30px 0 30px;
     background-color: none; }
+  .search-css th {
+    text-align: center; }
   .search-css .registrations, .search-css .zip, .search-css .availability {
     visibility: collapse; }
   .search-css #search-button {

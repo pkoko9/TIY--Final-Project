@@ -5,48 +5,49 @@
 		background-color: #90CED6;
 		color: #30488C;
 		height: 100em;
+		margin: 0 auto;
+		text-align: center;
 	}
 
 	.search-header {
 		font-size: 24px;
 		font-weight: 900;
-		text-align: center;
-		color: #30488C;
+		padding-top: 20px;
 	}
 	
-	.search-header li {
+	.text-line-one, .text-line-two {
 		font-size: 16px;
-		// margin: 0 30px 0 30px;
 		font-weight: 400;
-		text-align: left;
-		color: #30488C;
+	}
+	.text-line-one{
+		padding-top: 20px;
 	}
 
-	// .text-line-two, .text-line-one {
-	// 	font-size: 16px;
-	// 	// margin: 0 30px 0 30px;
-	// 	font-weight: 400;
-	// }
-
-	.search-criteria {
+	.search-criteria, .filters {
 		font-size: 16px;
-		margin-top: 0;
-		margin: 0 50px 0 50px;
+		margin: 0 auto;
 		max-width: 300px;
-		min-width: 200px;
+	}
+
+	.search-criteria div{
+		text-align: left;
 	}
 
 	.filters {
 		font-size: 16px;
-		margin-top: 0;
-		margin: 0 50px 0 50px;
+		margin: 0 auto;
+		// margin: 0 50px 0 50px;
 		max-width: 300px;
-		min-width: 200px;
+		display: inline;
 	}
 
 	#searchTable {
-		padding: 0 80px 0 80px;
+		padding: 0 30px 0 30px;
 		background-color: none;
+	}
+
+	th {
+		text-align: center;
 	}
 
 	.registrations, .zip, .availability {
