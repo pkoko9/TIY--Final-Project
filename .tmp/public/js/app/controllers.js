@@ -10,59 +10,125 @@ angular.module('app.controllers', ['app.services'])
 
 .controller('searchCTRL', function($scope, $http, $state){
 	
-	$scope.completeArray = [];
-	$scope.recoveredObject = [];
+	$scope.allUsers = [];
+	// $scope.filteredUsers = [];
 		
 	$scope.searchSubmit = function() {
 		// $state.go('search');
 	
 		$http.get('/user?registrations=' + $scope.registrations)
 			.success(function(res){
-				console.log(res);
-				$scope.recoveredObject = (res)
+				// console.log(res);
+				$scope.allUsers = (res);
 			// $scope.registerSuccess = true;
+				$scope.filters = true;
+				$scope.tableRender = true;
+				$scope.searchButton = true;
+				$scope.filterBy1 = '!!';
+				$scope.filterBy2 = '!!';
 
 			})
 
-		$scope.completeArray = _.sortBy($scope.completeArray, function(element) {
-			return element.firstname;
-		})
+		// $scope.recoveredObject = _.sortBy($scope.recoveredObject, function(element) {
+		// 	return element.currentlyAvailable;
+		// 	console.log($scope.recoveredObject);
+		// })
 
-		$scope.recoveredObject = _.sortBy($scope.completeArray, function(element) {
-			return element.firstname;
-			console.log($scope.recoveredObject);
-		})
-
-
+		// $scope.completeArray = _.sortBy($scope.recoveredObject, function(element) {
+		// 	return element.credentials;
+		// 	console.log($scope.completeArray);
+		// })
 	}
 
-		$scope.$watch('filterBy1', function(){
-	 		$scope.recoveredObject=_.filter($scope.recoveredObject, function(element) {
-	 		return element.firstname.toLowerCase().indexOf($scope.filterBy1.toLowerCase()) === 0;	
-			// return element.firstname.toLowerCase().indexOf($scope.filterBy1.toLowerCase()) === 0 ||
-			// element.lastname.toLowerCase().indexOf($scope.filterBy1.toLowerCase()) === 0;
+		// $scope.$watch('filterBy1', function(){
+	 // 		$scope.recoveredObject=_.filter($scope.recoveredObject, function(element) {
+	 // 		return element.credentials.indexOf($scope.filterBy1) === 0;	
+		// 	// return element.firstname.toLowerCase().indexOf($scope.filterBy1.toLowerCase()) === 0 ||
+		// 	// element.lastname.toLowerCase().indexOf($scope.filterBy1.toLowerCase()) === 0;
 
-			});
+		// 	});
 
-		});
+		// });
 
-		$scope.$watch('filterBy2', function(){
-	 		$scope.recoveredObject=_.filter($scope.recoveredObject, function(element) {
-			return element.lastname.toLowerCase().indexOf($scope.filterBy2.toLowerCase()) === 0;
+		// $scope.$watch('filterBy2', function(){
+	 // 		$scope.recoveredObject=_.filter($scope.recoveredObject, function(element) {
+		// 	return element.currentlyAvailable.indexOf($scope.filterBy2) === 0;
 
-			});
+		// 	});
 
-		});
+		// });
 
-		$scope.$watch('filterBy3', function(){
-	 		$scope.recoveredObject=_.filter($scope.recoveredObject, function(element) {
-			return element.credentials.toLowerCase().indexOf($scope.filterBy3.toLowerCase()) === 0;
+		// $scope.$watch('filterBy3', function(){
+	 // 		$scope.recoveredObject=_.filter($scope.recoveredObject, function(element) {
+		// 	return element.credentials.toLowerCase().indexOf($scope.filterBy3.toLowerCase()) === 0;
 
-			});
+		// 	});
 
-		});
-
+		// });
 })
+
+// .controller('searchCTRL', function($scope, $http, $state){
+	
+// 	$scope.completeArray = [];
+// 	$scope.recoveredObject = [];
+// 	$scope.filterBy1 = '';
+// 	$scope.filterBy2 = '';
+		
+// 	$scope.searchSubmit = function() {
+// 		// $state.go('search');
+	
+// 		$http.get('/user?registrations=' + $scope.registrations)
+// 			.success(function(res){
+// 				// console.log(res);
+// 				$scope.recoveredObject = (res)
+// 			// $scope.registerSuccess = true;
+				// $scope.filters = true;
+				// $scope.tableRender = true;
+				// $scope.searchButton = true;
+
+// 			})
+
+// 		$scope.completeArray = _.sortBy($scope.completeArray, function(element) {
+// 			return element.firstname;
+// 		})
+
+// 		$scope.recoveredObject = _.sortBy($scope.completeArray, function(element) {
+// 			return element.firstname;
+// 			console.log($scope.recoveredObject);
+// 		})
+
+// 		// $scope.recoveredObject = _.sortBy($scope.recoveredObject, function(element) {
+// 		// 	return element.firstname;
+// 		// })
+
+// 		// $scope.completeArray = _.sortBy($scope.recoveredObject, function(element) {
+// 		// 	return element.firstname + element.lastname + element.phone +
+// 		// 	element.credentials + element.currentlyAvailable + element.registrations;
+// 		// 	console.log($scope.recoveredObject);
+// 		// })
+
+
+// 	}
+
+// 		$scope.$watch('filterBy1', function(){
+// 	 		$scope.completeArray=_.filter($scope.recoveredObject, function(element) {
+// 	 		return element.currentlyAvailable.toLowerCase().indexOf($scope.filterBy1.toLowerCase()) === 0;
+// 			// return element.firstname.toLowerCase().indexOf($scope.filterBy1.toLowerCase()) === 0 ||
+// 			// element.lastname.toLowerCase().indexOf($scope.filterBy1.toLowerCase()) === 0;
+
+// 			});
+
+// 		});
+
+// 		$scope.$watch('filterBy2', function(){
+// 	 		$scope.completeArray=_.filter($scope.recoveredObject, function(element) {
+// 			return element.credentials.toLowerCase().indexOf($scope.filterBy2.toLowerCase()) === 0;
+
+// 			});
+
+// 		});
+
+// })
 
 .controller('loginCTRL', function($scope, $http, $state){
 
@@ -75,6 +141,8 @@ angular.module('app.controllers', ['app.services'])
 	$scope.loginFailure = [];
 	$scope.registerSuccess = false;
 	$scope.registerFailure = [];
+	$scope.test = false;
+	$scope.navRegister = false;
 	// $scope.myHome=true;
 	// $scope.myLogout=true;
 
@@ -110,14 +178,21 @@ angular.module('app.controllers', ['app.services'])
 			$http.post('/auth/local', loginInput)
 			.success(function(res){
 				// console.log('success!');
-				// console.log(res.errors);
-			// if(res.success) {
-					$scope.loginSuccess=true;
+				// console.log(res);
+				if(res) {
+					// console.log(res);
+					// $scope.loginSuccess=true;
+					// $scope.test = false;
 					$state.go('landing');
-				// }
-				// else {
-				// 	$scope.loginFailure = res.errors;
-				// }
+					console.log('successful login!')
+					// $scope.navRegister = false;
+
+				}
+				else {
+					$scope.loginFailure = res.errors;
+					console.log (err);
+					console.log($scope.loginFailure);
+				}
 			});
 
 			$scope.email='';
@@ -181,7 +256,7 @@ angular.module('app.controllers', ['app.services'])
 			registerInput.username = registerInput.email;
 			$http.post('/auth/local/register', registerInput)
 			.success(function(res){
-				console.log('success!');
+				console.log('successful registration!');
 				console.log(res);
 				
 				$state.go('landing');
@@ -209,14 +284,24 @@ angular.module('app.controllers', ['app.services'])
 
 })
 
-.controller('NavCtrl', function($scope, $http, $state){
+.controller('NavCtrl', function($scope, $http, $state, $rootScope){
 	
+	// $scope.isLoggedIn = User.isLoggedIn();
+	// $scope.user = User.getInfo();
+	// $rootScope.$on('LOGIN_EVENT', function() {
+	// 	$scope.isLoggedIn = User.isLoggedIn();
+	// 	$scope.user = User.getInfo();
+	// 	console.log('LOGIN HAPPENED');
+	// 	console.log($scope.isLoggedIn);
+	// });
+
 	$scope.logOut = function () {
 		// console.log ('test logout click');
 		$http.post('/logout')
 		.success(function(response) {
 			if (response.success)
 				$state.go('landing')
+				console.log('Successful logout!')
 		})
 	}
 	$scope.loginRoute = function() {
@@ -225,4 +310,4 @@ angular.module('app.controllers', ['app.services'])
 	$scope.createProfileRoute = function() {
 		$state.go('register');
 	}
-})
+});

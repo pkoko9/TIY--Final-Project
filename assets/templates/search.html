@@ -1,54 +1,74 @@
-<div class="search-header">Search Criteria<br>
-	<span>In the field below, please enter the name of the company in need of PRN support.  Press the "Find PRNs" button to display your search results.</span>
-</div><br>
- 
 
-    <form class='search-criteria'>
-	   Hiring company name<input type="text" class = "form-control" ng-model = "registrations" id="companySelect" placeholder="Enter hiring company">
+<section class = "search-css">
 
-       <h3 class="filter-header">Filters</h3>
+    <div class = "search-wrapper">
+        <div class="search-header">PRN Search<br>
+            <ol>
+                <li class = "text-line-one">Enter the company in need of PRN support</li>
+                <li class = "text-line-two">Press "Find PRNs" to display your results</li>
+            </ol>
+        </div><br>
 
-        First Name<input id='filterByFirst' class = "form control" type='text' placeholder='Filter by First Name' ng-model='filterBy1'>
 
-        Last Name<input id='filterByLast' class = "form control" type='text' placeholder='Filter by Last Name' ng-model='filterBy2'>
+        <form class='search-criteria'>
+           Company name<input type="text" class = "form-control" ng-model = "registrations" id="companySelect" placeholder="Enter hiring company">
 
-        Certifications<input id='filterByCreds' class = "form control" type='text' placeholder='Filter by Certification' ng-model='filterBy3'><br>
+            <br><button id = "search-button" ng-hide="searchButton" type='button' ng-click = "searchSubmit()" class="btn btn-success btn-default">Find PRNs</button>
+            <button id = "search-cancel-button" ng-hide="searchButton" type= 'button' class="btn btn-link btn-default" ng-controller='cancelCTRL' ng-click='cancel()'>Cancel</button>
+           <br><br>
+        </form>
 
-        <br><button type='button' ng-click = "searchSubmit()" class="btn btn-success btn-default">Find PRNs</button>
-        <button type= 'button' class="btn btn-info btn-default" ng-controller='cancelCTRL' ng-click='cancel()'>Cancel</button>
-	   <br>
-    </form>
-	
-        <div id='searchTable'>
-            <table class="table table-border table-hover table-condensed table-responsive">
-            
-                <tr>
-                    <th class='firstName'>First Name</th>
-                    <th class='lastName'>LastName</th>
-                    <th class='phone'>Phone</th>
-                    <th class='zip'>Zip Code</th>
-                    <th class='credentials' ng-click='onNameClick()'>Certification</th>
-                    <th class='availability' ng-click='onNameClick()'>Currently Available</th>
-                    <th class='registrations'>Company Registrations</th>
-                </tr>
-					
-<!-- 				<div class='submitButton'>
-					<button type='button' ng-click = "searchSubmit()" class="btn btn-success btn-lg">Find PRNs</button>
-					<button type= 'button' class="btn btn-info btn-lg" ng-controller='cancelCTRL' ng-click='cancel()'>Cancel</button>
-				</div><br> -->
+        <form class = "filters" ng-show="table-filters">
 
-                <tr id='searchTable' ng-repeat='data in recoveredObject'>
-                    <td> {{ data.firstname }}</td>
-                    <td> {{ data.lastname }}</td>
-                    <td> {{ data.phone }}</td>
-                    <td> {{ data.zip }}</td>
-                    <td> {{ data.credentials }}</td>
-                    <td> {{ data.currentlyAvailable }}</td>
-                    <td> {{ data.registrations }}</td>  
-                </tr>
+            Availability<!-- <input id = "filter-availability" class = "form-control" list='availability' placeholder='Filter by availability' ng-model='filterBy1'>-->
+                <select id="availability" ng-model='filterBy1'> 
+                    <option value="!!">Both</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
 
-            </table>
-        </div>
+            Certification<!--<input id ="filter-certs" list="disciplines" class="form-control" ng-model="filterBy2" placeholder="Filter by certification">-->
+                <select id="disciplines" ng-model='filterBy2'>
+                    <option value="!!">All</option>
+                    <option value="COTA">COTA</option>
+                    <option value="LVN">LVN</option>
+                    <option value="OTR">OTR</option>
+                    <option value="PT">PT</option>
+                    <option value="PTA">PTA</option>
+                    <option value="RN">RN</option>
+                    <option value="SLP">SLP</option>
+                </select> 
+
+        </form><br>
+
+            <div ng-show="tableRender" id='searchTable'>
+                <table class="table table-border table-hover table-condensed table-responsive">
+                
+                    <tr>
+                        <th class='firstName'>First</th>
+                        <th class='lastName'>Last</th>
+                        <th class='phone'>Phone</th>
+                        <th class='credentials'>Certification</th>
+        <!--                     <th class='zip'>Zip Code</th> -->
+                        <th class='availability'>Availability</th>
+                        <th class='registrations'>Company Registrations</th>
+                    </tr>
+
+                    <tr id='searchTable' ng-repeat='user in allUsers | filter: {
+                    "currentlyAvailable": filterBy1, "credentials": filterBy2}'>
+                        <td> {{ user.firstname }}</td>
+                        <td> {{ user.lastname }}</td>
+                        <td> {{ user.phone }}</td>
+                        <td> {{ user.credentials }}</td>
+        <!--                     <td class='zip'> {{ data.zip }}</td> -->
+                        <td class= 'availability'> {{ user.currentlyAvailable }}</td>
+                        <td class= 'registrations'> {{ user.registrations }}</td>  
+                    </tr>
+
+                </table>        
+            </div>
+    </div>
+</section>
 
 
 

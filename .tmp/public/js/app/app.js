@@ -1,4 +1,15 @@
-angular.module('app', ['app.controllers', 'ui.router'])
+angular.module('app', ['app.controllers', 'ui.router', 'app.services'])
+
+// .run(function($http, User) {
+// 	$http.get('/auth/user')
+// 	.success(function(user) {
+// 		User.setLoggedInUser(user);
+// 	})
+// 	.error(function(err) {
+// 		console.log(err);
+// 	});
+// })
+
 .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 	$stateProvider
 	
@@ -33,3 +44,17 @@ angular.module('app', ['app.controllers', 'ui.router'])
 	$urlRouterProvider.otherwise('/landing');
 
 });
+
+// Log In Validation Code frm Aaron
+
+// angular.module('app', ['app.controllers', 'app.services'])
+// .run(function($http, User) {
+// 	$http.get('/auth/user')
+// 	.success(function(user) {
+// 		User.setLoggedInUser(user);
+// 	})
+// 	.error(function(err) {
+// 		console.log(err);
+// 	});
+// })
+// .config(function())

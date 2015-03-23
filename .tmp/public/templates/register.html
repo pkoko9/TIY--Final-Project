@@ -1,68 +1,75 @@
-<div class="register-header">Create Profile</div>
-
-<div ng-controller="registerCTRL">
+<section class = "register-css">	
 	
-	<form class='form'  ng-submit="login(registerInput)">
-	
-		<div>First Name</div>
-		<input type="text" class="form-control" ng-model="registerInput.firstName" placeholder="Enter your First Name">
+	<div class = "register-wrapper">
 
-		<div>Last Name</div>
-		<input type="text" class="form-control" ng-model="registerInput.lastName" placeholder="Enter your Last Name">
+		<div class="register-header">Create Profile</div>
 
-		<div>Email</div>
-			<input type="text" class="form-control" ng-model="registerInput.email" placeholder="pk23@gmail.com">
-	
-		<div>Password</div>
-			<input type="password" class="form-control" ng-model="registerInput.password" placeholder="Enter your password">
+		<div ng-controller="registerCTRL">
+			
+			<div id = "form-wrapper">
+				<form class='form'  ng-submit="login(registerInput)">
+				
+					<div>First Name</div>
+					<input type="text" class="form-control" ng-model="registerInput.firstName" placeholder="Enter your First Name">
 
-		<div>Phone</div>
-		<input type="number" class="form-control" ng-model="registerInput.phone" placeholder="Enter your phone number">
+					<div>Last Name</div>
+					<input type="text" class="form-control" ng-model="registerInput.lastName" placeholder="Enter your Last Name">
 
-		<div>Zip Code</div>
-		<input type="number" class="form-control" ng-model="registerInput.zip" placeholder="Enter your 5 digit zip code">
+					<div>Email</div>
+						<input type="text" class="form-control" ng-model="registerInput.email" placeholder="pk23@gmail.com">
+				
+					<div>Password</div>
+						<input type="password" class="form-control" ng-model="registerInput.password" placeholder="Enter your password">
 
-		<div>Credentials</div>
-		<input list="disciplines" class="form-control" ng-model="registerInput.credentials" placeholder="Select your certification">
-			<datalist id="disciplines">
-				<option value="Not Applicable">
-				<option value="COTA">
-			  	<option value="LVN">
-			  	<option value="OTR">
-			  	<option value="PT">
-			  	<option value="PTA">
-				<option value="RN">
-				<option value="SLP">
-			</datalist> 
+					<div>Phone</div>
+						<input type="number" class="form-control" ng-model="registerInput.phone" placeholder="Enter your phone number">
 
-	<div>Currently Active</div>
-		<input list="availability" class="form-control" ng-model="registerInput.currentlyAvailable" placeholder="Are you currently available for work?">
-			<datalist id="availability">
-				<option value="Not Applicable">
-				<option value="Yes">
-				<option value="No">
-			</datalist>
+					<div>Zip Code</div>
+						<input type="number" class="form-control" ng-model="registerInput.zip" placeholder="Enter your 5 digit zip code">
 
-	<div class="registered-with">Companies Registered With</div>
-			<input type="textbox" class="form-control" ng-model="registerInput.registrations" placeholder="Please list the companies you are currently registered with separating each with a comma. (i.e., RehabWorks, Harden Healthcare, etc."><br>
+					<div>Credentials</div>
+						<input list="disciplines" class="form-control" ng-model="registerInput.credentials" placeholder="Select your certification">
+							<datalist id="disciplines">
+								<option value="Not Applicable">
+								<option value="COTA">
+							  	<option value="LVN">
+							  	<option value="OTR">
+							  	<option value="PT">
+							  	<option value="PTA">
+								<option value="RN">
+								<option value="SLP">
+							</datalist> 
 
-		<button type="submit" class="btn btn-success btn-default">Submit</button>
-		<button type="submit" class="btn btn-warning btn-default">Edit Profile</button>
-		<button type= 'button' class="btn btn-info btn-default" ng-controller='cancelCTRL' ng-click='cancel()'>Cancel</button>
-	</form>
+					<div>Currently Active</div>
+						<input list="availability" class="form-control" ng-model="registerInput.currentlyAvailable" placeholder="Are you currently available for work?">
+							<datalist id="availability">
+								<option value="Not Applicable">
+								<option value="Yes">
+								<option value="No">
+							</datalist>
 
-	<div class = "error-messages">
-		<span ng-show = "pwFail">Please enter a password</span><br>
-		<span ng-show = "emailFail">Please enter a valid email address</span>
+					<div>Companies Registered With</div>
+					<textarea id="registered-with" type="text" class="form-control" ng-model="registerInput.registrations" placeholder="Please list the companies you are currently registered with separating each with a comma. (i.e., RehabWorks, Harden Healthcare, etc."></textarea>
+					<br>
+
+					<button id = "submit-button" type="submit" class="btn btn-success btn-default">Submit</button>
+					<button id = "edit-button" type="submit" class="btn btn-warning btn-default">Edit Profile</button>
+					<button id= "cancel-submit" type= 'button' class="btn btn-link btn-default" ng-controller='cancelCTRL' ng-click='cancel()'>Cancel</button>
+				</form>
+			</div>
+				<div class = "error-messages">
+					<span ng-show = "pwFail">Please enter a password</span><br>
+					<span ng-show = "emailFail">Please enter a valid email address</span>
+				</div>
+
+				<div class='RegisterStatusMessages'>
+					<span ng-show = "registerSuccess">Congratulations!  You have successfully registered!</span>
+					<span ng-repeat = "error in registerFailure">{{ error }}</span>
+				</div>
+		
+		</div>
+
+		<div ng-controller='cancelCTRL'></div>
 	</div>
 
-	<div class='RegisterStatusMessages'>
-		<span ng-show = "registerSuccess">Congratulations!  You have successfully registered!</span>
-		<span ng-repeat = "error in registerFailure">{{ error }}</span>
-	</div>
-	
-</div>
-
-<div ng-controller='cancelCTRL'>
-	
-</div>
+</section>

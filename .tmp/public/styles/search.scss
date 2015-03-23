@@ -1,22 +1,76 @@
-.search-header {
-	font-size: 24px;
-	font-weight: 900;
-	text-align: center;
-}
+.search-css {
+	min-height: 75em;
 
-.search-header span {
-	font-size: 16px;
-	margin: 0 20px 0 20px;
-}
+	.search-wrapper {
+		background-color: #90CED6;
+		color: #30488C;
+		height: 100em;
+	}
 
-.search-criteria {
-	font-size: 16px;
-	// background-color: #E3E1E1;
-	margin-top: 0;
-	margin: 0 50px 0 50px;
-}
+	.search-header {
+		font-size: 24px;
+		font-weight: 900;
+		text-align: center;
+		color: #30488C;
+	}
+	
+	.search-header li {
+		font-size: 16px;
+		// margin: 0 30px 0 30px;
+		font-weight: 400;
+		text-align: left;
+		color: #30488C;
+	}
 
-.filter-header {
-	text-align: center;
-	background-color: white;
+	// .text-line-two, .text-line-one {
+	// 	font-size: 16px;
+	// 	// margin: 0 30px 0 30px;
+	// 	font-weight: 400;
+	// }
+
+	.search-criteria {
+		font-size: 16px;
+		margin-top: 0;
+		margin: 0 50px 0 50px;
+		max-width: 300px;
+		min-width: 200px;
+	}
+
+	.filters {
+		font-size: 16px;
+		margin-top: 0;
+		margin: 0 50px 0 50px;
+		max-width: 300px;
+		min-width: 200px;
+	}
+
+	#searchTable {
+		padding: 0 80px 0 80px;
+		background-color: none;
+	}
+
+	.registrations, .zip, .availability {
+		visibility: collapse;
+	}
+
+	#search-button {
+		background-color: #9FCC58;
+		border: none;
+	}
+
+	#search-cancel-button {
+		color: #E01409;
+	}
+
+	@media(min-width: 768px){
+		.registrations, .zip, .availability {
+			visibility: visible;
+		}
+		#filter-availability, #filter-certs {
+		display: inline-block;
+		width: 100%
+		}
+
+
+	}
 }

@@ -1,30 +1,36 @@
-<div class = "login-header">Login</div>
-
-<div ng-controller="loginCTRL">
 	
-	<form class='form'  ng-submit="login(email, password)">
-	
-		<div>Email</div>
-			<input type="text" class="form-control" ng-model="email" placeholder="pk23@gmail.com">
-	
-		<div>Password</div>
-			<input type="password" class="form-control" ng-model="password" placeholder="Enter your password"><br>
+<section class = "login-css">
+		
+	<div class = "login-wrapper">
+		<div class = "login-header">Login</div>
 
-	
-		<button type="submit" class="btn btn-success btn-default">Submit</button>
-		<button type= 'button' class="btn btn-info btn-default" ng-controller='cancelCTRL' ng-click='cancel()'>Cancel</button>
+		<div ng-controller="loginCTRL">
+			
+			<form class="form col-sm-4"  ng-submit="login(email, password)">
+			
+				<div>Email</div>
+					<input type="text" class="form-control" ng-model="email" placeholder="pk23@gmail.com">
+			
+				<div>Password</div>
+					<input type="password" class="form-control" ng-model="password" placeholder="Enter your password"><br>
 
-	</form>
+			
+				<button id="login-submit" type="submit" class="btn btn-success btn-default">Submit</button>
+				<button id="login-cancel" type= 'button' class="btn btn-link btn-default" ng-controller='cancelCTRL' ng-click='cancel()'>Cancel</button>
 
-	<div class='failMessages'>
-		<span ng-show = "pwFail">Please enter a password</span><br>
-		<span ng-show = "emailFail">Please enter a valid email address</span>
+			</form>
+
+			<div class='failMessages'>
+				<span ng-show = "pwFail">Please enter a password</span><br>
+				<span ng-show = "emailFail">Please enter a valid email address</span>
+			</div>
+
+			<div class='logInSuccessMessage'>
+				<span ng-show = "loginSuccess">Congratulations!  You have successfully logged in!</span>
+				<span ng-repeat = "error in loginFailure">{{ error }}</span>
+
+		</div>
 	</div>
-
-	<div class='logInSuccessMessage'>
-		<span ng-show = "loginSuccess">Congratulations!  You have successfully logged in!</span>
-		<span ng-repeat = "error in loginFailure">{{ error }}</span>
-
-</div>
+</section>
 
 	
