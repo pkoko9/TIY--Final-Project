@@ -93,7 +93,8 @@
   font-size: 24px;
   font-weight: 900;
   text-align: center;
-  color: #30488C; }
+  color: #30488C;
+  padding-top: 20px; }
 .login-css .failMessages {
   color: red;
   font-size: 20px;
@@ -111,12 +112,13 @@
 .register-css .register-wrapper {
   background-color: #90CED6;
   color: #30488C;
-  height: 55em; }
+  height: 57em; }
 .register-css .register-header {
   font-size: 24px;
   font-weight: 900;
   text-align: center;
-  color: #30488C; }
+  color: #30488C;
+  padding-top: 20px; }
 .register-css #registered-with {
   font-size: 16px;
   margin-top: 0;
@@ -126,6 +128,8 @@
 .register-css .form {
   max-width: 300px;
   margin: 0 auto; }
+.register-css .form div {
+  font-size: 16px; }
 .register-css .form input {
   font-size: 16px;
   margin-top: 0;

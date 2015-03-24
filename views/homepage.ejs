@@ -8,7 +8,7 @@
     </section>
 
     <div ng-app='app' id="nav-padding">
-        <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" ng-controller = "NavCtrl">
+        <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" ng-controller = "NavCtrl" ng-model = "isLoggedIn">
           <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -23,12 +23,14 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
                 <li><a href="#" ui-sref-active='active' ui-sref='landing'>Home</a></li>
-                <li><a href="#" ui-sref-active='active' ui-sref='login'>Login</a></li>
-                <li><a href="#" ui-sref-active='active' ui-sref='register'>Create Profile</a></li>
-                <li><a href="#" ui-sref-active='active' ui-sref='search'>PRN Search</a></li>
-                <li><a href="#" ng-click="logOut()">Logout</a></li>
-                <li><a href="#" ui-sref-active='active' ui-sref='landing'></a>{{ user.email }}</li>
+                <li><a href="#" ng-hide = "isLoggedin" ui-sref-active='active' ui-sref='login'>Login</a></li>
+                <li><a href="#" ui-sref-active='active' ui-sref='register'>Create/EditProfile</a></li>
+                <li><a href="#" ng-show = "isLoggedin" ui-sref-active='active' ui-sref='search'>PRN Search</a></li>
+                <li><a href="#" ng-show = "isLoggedin" ng-click="logOut()">Logout {{ user.email }}</a></li>
+<!--                 <li><a href="#" ng-show = "isLoggedin" ui-sref-active='active' ui-sref='landing'></a>{{ user.email }}</li> -->
               </ul>
+
+<!--               ng-show="isLoggedin" -->
      
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->

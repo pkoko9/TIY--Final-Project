@@ -21,16 +21,15 @@ angular.module('app.controllers', ['app.services'])
 				$scope.filters = true;
 				$scope.tableRender = true;
 				$scope.searchButton = true;
+				$scope.reloadButton = false;
 				$scope.filterBy1 = '!!';
 				$scope.filterBy2 = '!!';
 
 			})
-
 	}
-
 })
 
-.controller('loginCTRL', function($scope, $http, $state){
+.controller('loginCTRL', function($scope, $http, $state, $rootScope){
 
 	var correctEmail = false;
 	var correctPW = false;
@@ -41,8 +40,8 @@ angular.module('app.controllers', ['app.services'])
 	$scope.loginFailure = [];
 	$scope.registerSuccess = false;
 	$scope.registerFailure = [];
-	$scope.test = false;
 	$scope.navRegister = false;
+	$rootScope.isLoggedin = false;
 
 	$scope.login = function(email, password) {
 		var input1 = validator.isEmail(email);
@@ -75,9 +74,10 @@ angular.module('app.controllers', ['app.services'])
 			$http.post('/auth/local', loginInput)
 			.success(function(res){
 				// console.log(res);
-				if(res) {
+				if(res) {;
 					$state.go('landing');
 					console.log('successful login!')
+					$rootScope.isLoggedin = true;
 
 				}
 				else {
@@ -93,10 +93,9 @@ angular.module('app.controllers', ['app.services'])
 		}
 		console.log(loginInput);
 	};
-
 })
 
-.controller('registerCTRL', function($scope, $http, $state){
+.controller('registerCTRL', function($scope, $http, $state, $rootScope){
 
 	var correctEmail = false;
 	var correctPW = false;
@@ -146,8 +145,9 @@ angular.module('app.controllers', ['app.services'])
 			.success(function(res){
 				console.log('successful registration!');
 				console.log(res);
+				$rootScope.isLoggedin = true;
 				
-				$state.go('landing');
+				$state.go('home');
 				$scope.registerSuccess = true;
 			});
 
@@ -170,13 +170,16 @@ angular.module('app.controllers', ['app.services'])
 
 .controller('NavCtrl', function($scope, $http, $state, $rootScope){
 	
+		$rootScope.isLoggedin = false;
+
 	$scope.logOut = function () {
 		// console.log ('test logout click');
 		$http.post('/logout')
 		.success(function(response) {
 			if (response.success)
-				$state.go('landing')
-				console.log('Successful logout!')
+				$state.go('landing');
+				$rootScope.isLoggedin = false;
+				console.log ($scope.isLoggedin);
 		})
 	}
 	$scope.loginRoute = function() {
