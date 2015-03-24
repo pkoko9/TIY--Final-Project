@@ -187,8 +187,9 @@
     max-width: 300px;
     display: inline; }
   .search-css #searchTable {
-    padding: 0 30px 0 30px;
-    background-color: none; }
+    background-color: white;
+    font-size: 16px;
+    padding-left: 20px; }
   .search-css th {
     text-align: center; }
   .search-css .registrations, .search-css .zip, .search-css .availability {
@@ -206,6 +207,8 @@
       visibility: visible; }
     .search-css #filter-availability, .search-css #filter-certs {
       display: inline-block;
-      width: 100%; } }
+      width: 100%; }
+    .search-css #searchTable {
+      font-size: 20px; } }
 
 /*# sourceMappingURL=importer.css.map */

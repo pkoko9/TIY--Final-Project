@@ -42,8 +42,10 @@
 	}
 
 	#searchTable {
-		padding: 0 30px 0 30px;
-		background-color: none;
+		// padding: 0 30px 0 30px;
+		background-color: white;
+		font-size: 16px;
+		padding-left: 20px;
 	}
 
 	th {
@@ -76,6 +78,10 @@
 		display: inline-block;
 		width: 100%
 		}
+
+		#searchTable {
+		font-size: 20px;
+	}
 
 
 	}
