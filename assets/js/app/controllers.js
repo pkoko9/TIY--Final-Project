@@ -4,13 +4,15 @@ angular.module('app.controllers', ['app.services'])
 	$scope.message = $stateParams.success;
 })
 
-.controller('landingCTRL', function($scope, $state){
+.controller('landingCTRL', function($scope, $state, $rootScope){
+	$rootScope.logUserOut = true;
 
 })
 
-.controller('searchCTRL', function($scope, $http, $state){
+.controller('searchCTRL', function($scope, $http, $state, $rootScope){
 	
 	$scope.allUsers = [];
+	$rootScope.logUserOut = true; 
 		
 	$scope.searchSubmit = function() {
 	
@@ -18,14 +20,26 @@ angular.module('app.controllers', ['app.services'])
 			.success(function(res){
 				// console.log(res);
 				$scope.allUsers = (res);
-				$scope.filters = true;
+				$scope.tableFilters = true;
 				$scope.tableRender = true;
 				$scope.searchButton = true;
-				$scope.reloadButton = false;
+				$scope.reloadButton = true;
 				$scope.filterBy1 = '!!';
 				$scope.filterBy2 = '!!';
-
+				$scope.isLoggedin = true;
+				$scope.reloadButton = true;
 			})
+	}
+
+	$scope.reLoad = function () {
+
+				$scope.isLoggedin = true;
+				// $rootScope.allUsers = [];
+				$scope.tableFilters = false;
+				$scope.tableRender = false;
+				$scope.searchButton = false;
+				$scope.reloadButton = false;
+				$scope.registrations = '';
 	}
 })
 
@@ -42,6 +56,8 @@ angular.module('app.controllers', ['app.services'])
 	$scope.registerFailure = [];
 	$scope.navRegister = false;
 	$rootScope.isLoggedin = false;
+	$rootScope.userName = {};
+	$rootScope.logUserOut = true;
 
 	$scope.login = function(email, password) {
 		var input1 = validator.isEmail(email);
@@ -70,6 +86,8 @@ angular.module('app.controllers', ['app.services'])
 				identifier: email,
 				password: password
 			};
+			
+			$rootScope.userName = email;
 
 			$http.post('/auth/local', loginInput)
 			.success(function(res){
@@ -146,13 +164,14 @@ angular.module('app.controllers', ['app.services'])
 				console.log('successful registration!');
 				console.log(res);
 				$rootScope.isLoggedin = true;
-				
-				$state.go('home');
+				$rootScope.userName = registerInput.username;			
+				$state.go('landing');
 				$scope.registerSuccess = true;
 			});
 
 			$scope.email='';
 			$scope.password='';
+
 		}
 		console.log(registerInput);
 	};
@@ -170,7 +189,10 @@ angular.module('app.controllers', ['app.services'])
 
 .controller('NavCtrl', function($scope, $http, $state, $rootScope){
 	
+		// $rootScope.userName = identifier.email;
 		$rootScope.isLoggedin = false;
+
+		// $rootScope.email = {identifier.email}
 
 	$scope.logOut = function () {
 		// console.log ('test logout click');
@@ -178,6 +200,7 @@ angular.module('app.controllers', ['app.services'])
 		.success(function(response) {
 			if (response.success)
 				$state.go('landing');
+				$rootScope.logUserOut = false;
 				$rootScope.isLoggedin = false;
 				console.log ($scope.isLoggedin);
 		})
@@ -189,3 +212,4 @@ angular.module('app.controllers', ['app.services'])
 		$state.go('register');
 	}
 });
+

@@ -62,6 +62,10 @@
   font-style: italic;
   text-decoration: underline;
   font-weight: 900; }
+.homepage-css #loginName {
+  color: #9FCC58; }
+.homepage-css #logOutConfirm {
+  color: #9FCC58; }
 @media (min-width: 768px) {
   .homepage-css .home-header img {
     height: 15em;
@@ -112,7 +116,7 @@
 .register-css .register-wrapper {
   background-color: #90CED6;
   color: #30488C;
-  height: 57em; }
+  height: 60em; }
 .register-css .register-header {
   font-size: 24px;
   font-weight: 900;
@@ -194,6 +198,9 @@
     border: none; }
   .search-css #search-cancel-button {
     color: #E01409; }
+  .search-css #reload-button {
+    background-color: #9FCC58;
+    border: none; }
   @media (min-width: 768px) {
     .search-css .registrations, .search-css .zip, .search-css .availability {
       visibility: visible; }

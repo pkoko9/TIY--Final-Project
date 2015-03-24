@@ -63,6 +63,11 @@
 		color: #E01409;
 	}
 
+	#reload-button {
+		background-color: #9FCC58;
+		border: none;
+	}
+
 	@media(min-width: 768px){
 		.registrations, .zip, .availability {
 			visibility: visible;
