@@ -33,7 +33,9 @@
     .landing-css .about {
       font-size: 26px; }
     .landing-css .home-text {
-      font-size: 20px; } }
+      font-size: 20px; }
+    .landing-css #staff-img {
+      margin-top: -110px; } }
 
 .homepage-css {
   font-family: Open Sans; }
@@ -115,7 +117,6 @@
     float: none;
     font-size: 20px; }
   .login-css form input {
-    font-size: 20px;
     margin-bottom: 15px; }
   .login-css .login-header {
     font-size: 26px; } }
@@ -160,19 +161,21 @@
   color: red;
   font-size: 20px;
   text-align: center; }
+.register-css #filter1, .register-css #filter2 {
+  display: inline-block; }
 @media (min-width: 768px) {
   .register-css .form input {
     margin-top: 0;
     min-width: 200px;
     margin-bottom: 15px;
-    font-size: 20px; }
+    font-size: 16px; }
   .register-css .form div {
     font-size: 20px; }
   .register-css .register-header {
     font-size: 26px;
     padding-bottom: 15px; }
   .register-css #registered-with {
-    font-size: 20px; } }
+    font-size: 16px; } }
 
 .search-css {
   min-height: 75em; }
@@ -245,6 +248,10 @@
     .search-css .filters {
       font-size: 20px; }
     .search-css .search-criteria input {
-      font-size: 20px; } }
+      font-size: 20px; }
+    .search-css #companySelect {
+      font-size: 16px; }
+    .search-css #availability, .search-css #disciplines {
+      font-size: 16px; } }
 
 /*# sourceMappingURL=importer.css.map */

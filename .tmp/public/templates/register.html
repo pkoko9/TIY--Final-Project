@@ -10,10 +10,10 @@
 				<form class='form'  ng-submit="login(registerInput)">
 				
 					<div>First Name</div>
-					<input type="text" class="form-control" ng-model="registerInput.firstName" placeholder="Enter your First Name">
+						<input type="text" class="form-control" ng-model="registerInput.firstName" placeholder="Enter your First Name">
 
 					<div>Last Name</div>
-					<input type="text" class="form-control" ng-model="registerInput.lastName" placeholder="Enter your Last Name">
+						<input type="text" class="form-control" ng-model="registerInput.lastName" placeholder="Enter your Last Name">
 
 					<div>Email</div>
 						<input type="text" class="form-control" ng-model="registerInput.email" placeholder="pk23@gmail.com">
@@ -28,7 +28,7 @@
 						<input type="number" class="form-control" ng-model="registerInput.zip" placeholder="Enter your 5 digit zip code">
 
 					<div>Credentials</div>
-						<input list="disciplines" class="form-control" ng-model="registerInput.credentials" placeholder="Select your certification">
+						<input id = "filter1" list="disciplines" class="form-control" ng-model="registerInput.credentials" placeholder="Select your certification">
 							<datalist id="disciplines">
 								<option value="Not Applicable">
 								<option value="COTA">
@@ -41,7 +41,7 @@
 							</datalist> 
 
 					<div>Currently Active</div>
-						<input list="availability" class="form-control" ng-model="registerInput.currentlyAvailable" placeholder="Are you currently available for work?">
+						<input id = "filter2" list="availability" class="form-control" ng-model="registerInput.currentlyAvailable" placeholder="Are you currently available for work?">
 							<datalist id="availability">
 								<option value="Not Applicable">
 								<option value="Yes">
