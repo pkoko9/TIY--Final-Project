@@ -1,4 +1,6 @@
 .homepage-css {
+	font-family: Open Sans;
+
 		.home-header {
 			text-align: center;
 			border-bottom: solid black 1px;
@@ -19,7 +21,6 @@
 
 		.text-header {
 			text-align: center;
-			font-family: verdana;
 		}
 
 		.move-text span{
@@ -65,14 +66,16 @@
 			}
 
 			.move-text h3{
-				font-size: 30px; 
+				font-size: 34px; 
 			}
 
 			.move-text p{
-				font-size: 20px; 
+				font-size: 26px; 
 			}
 
-
+			.nav {
+				font-size: 18px;
+			}
 		}
 }
 

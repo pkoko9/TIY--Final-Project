@@ -4,15 +4,16 @@
 	.register-wrapper {
 		background-color: #90CED6;
 		color: #30488C;
-		height: 60em;
+		height: 65em;
 	}
 
 	.register-header {
-		font-size: 24px;
+		font-size: 20px;
 		font-weight: 900;
 		text-align: center;
 		color: #30488C;
 		padding-top: 20px;
+		padding-bottom: 15px;
 	}
 
 	#registered-with {
@@ -62,10 +63,23 @@
 
 	@media(min-width: 768px){
 	
-	.form input {
-		margin-top: 0;
-		min-width: 200px;
-		margin-bottom: 15px;
+		.form input {
+			margin-top: 0;
+			min-width: 200px;
+			margin-bottom: 15px;
+			font-size: 20px;
+			}
+		.form div {
+			font-size: 20px;
+		}
+
+		.register-header {
+			font-size: 26px;
+			padding-bottom: 15px;
+		}
+
+		#registered-with {
+			font-size: 20px;
 		}
 
 	}

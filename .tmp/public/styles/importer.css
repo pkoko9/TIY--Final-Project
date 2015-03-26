@@ -13,74 +13,73 @@
  * always omit, customize, or replace this behavior with SASS, SCSS,
  * or any other Grunt tasks you like.)
  */
-.landing-css .nav-bar {
-  height: 3em;
-  background-color: #A7C3CF;
-  text-align: center;
-  border-top: solid black 1px;
-  border-bottom: solid black 1px; }
-.landing-css .nav-bar a {
-  color: black;
-  font-size: 25px;
-  border-right: solid black 2px;
-  padding: 0 15px 0 15px; }
-.landing-css .about {
-  font-size: 20px;
-  font-weight: 900;
-  padding: 10px 0 10px 0;
-  margin-left: 10px;
-  color: #30488C; }
-.landing-css .home-text {
-  font-size: 16px;
-  margin: 0 30px 0 30px;
-  color: #30488C; }
-.landing-css .carousel {
-  border-top: solid #8E8E91 2px; }
-.landing-css .carousel-inner {
-  max-height: 500px; }
+.landing-css {
+  font-family: Open Sans; }
+  .landing-css .about {
+    font-size: 20px;
+    font-weight: 900;
+    padding: 10px 0 10px 0;
+    margin-left: 10px;
+    color: #30488C; }
+  .landing-css .home-text {
+    font-size: 16px;
+    margin: 0 30px 0 30px;
+    color: #30488C; }
+  .landing-css .carousel {
+    border-top: solid #8E8E91 2px; }
+  .landing-css .carousel-inner {
+    max-height: 500px; }
+  @media (min-width: 768px) {
+    .landing-css .about {
+      font-size: 26px; }
+    .landing-css .home-text {
+      font-size: 20px; } }
 
-.homepage-css .home-header {
-  text-align: center;
-  border-bottom: solid black 1px; }
-.homepage-css .move-text {
-  color: #30488C; }
-.homepage-css .row {
-  margin: 0; }
-.homepage-css .home-header img {
-  height: 50%;
-  padding-top: 50px; }
-.homepage-css .text-header {
-  text-align: center;
-  font-family: verdana; }
-.homepage-css .move-text span {
-  font-weight: 900;
-  font-style: italic;
-  text-decoration: underline; }
-.homepage-css .title {
-  font-size: 50px; }
-.homepage-css .fast {
-  font-style: italic;
-  text-decoration: underline;
-  font-weight: 900; }
-.homepage-css #loginName {
-  color: #9FCC58; }
-.homepage-css #logOutConfirm {
-  color: #9FCC58; }
-@media (min-width: 768px) {
-  .homepage-css .home-header img {
-    height: 15em;
-    display: inline-block;
-    padding-top: 0;
-    padding-bottom: 50px; }
+.homepage-css {
+  font-family: Open Sans; }
   .homepage-css .home-header {
-    overflow: hidden; }
+    text-align: center;
+    border-bottom: solid black 1px; }
   .homepage-css .move-text {
-    display: inline-block;
-    padding-top: 100px; }
-  .homepage-css .move-text h3 {
-    font-size: 30px; }
-  .homepage-css .move-text p {
-    font-size: 20px; } }
+    color: #30488C; }
+  .homepage-css .row {
+    margin: 0; }
+  .homepage-css .home-header img {
+    height: 50%;
+    padding-top: 50px; }
+  .homepage-css .text-header {
+    text-align: center; }
+  .homepage-css .move-text span {
+    font-weight: 900;
+    font-style: italic;
+    text-decoration: underline; }
+  .homepage-css .title {
+    font-size: 50px; }
+  .homepage-css .fast {
+    font-style: italic;
+    text-decoration: underline;
+    font-weight: 900; }
+  .homepage-css #loginName {
+    color: #9FCC58; }
+  .homepage-css #logOutConfirm {
+    color: #9FCC58; }
+  @media (min-width: 768px) {
+    .homepage-css .home-header img {
+      height: 15em;
+      display: inline-block;
+      padding-top: 0;
+      padding-bottom: 50px; }
+    .homepage-css .home-header {
+      overflow: hidden; }
+    .homepage-css .move-text {
+      display: inline-block;
+      padding-top: 100px; }
+    .homepage-css .move-text h3 {
+      font-size: 34px; }
+    .homepage-css .move-text p {
+      font-size: 26px; }
+    .homepage-css .nav {
+      font-size: 18px; } }
 
 .login-css .login-wrapper {
   background-color: #90CED6;
@@ -92,13 +91,15 @@
   max-width: 300px;
   float: none; }
 .login-css form input {
+  font-size: 16px;
   margin-bottom: 15px; }
 .login-css .login-header {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 900;
   text-align: center;
   color: #30488C;
-  padding-top: 20px; }
+  padding-top: 20px;
+  padding-bottom: 15px; }
 .login-css .failMessages {
   color: red;
   font-size: 20px;
@@ -111,18 +112,25 @@
 @media (min-width: 768px) {
   .login-css form {
     width: 300px;
-    float: none; } }
+    float: none;
+    font-size: 20px; }
+  .login-css form input {
+    font-size: 20px;
+    margin-bottom: 15px; }
+  .login-css .login-header {
+    font-size: 26px; } }
 
 .register-css .register-wrapper {
   background-color: #90CED6;
   color: #30488C;
-  height: 60em; }
+  height: 65em; }
 .register-css .register-header {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 900;
   text-align: center;
   color: #30488C;
-  padding-top: 20px; }
+  padding-top: 20px;
+  padding-bottom: 15px; }
 .register-css #registered-with {
   font-size: 16px;
   margin-top: 0;
@@ -156,7 +164,15 @@
   .register-css .form input {
     margin-top: 0;
     min-width: 200px;
-    margin-bottom: 15px; } }
+    margin-bottom: 15px;
+    font-size: 20px; }
+  .register-css .form div {
+    font-size: 20px; }
+  .register-css .register-header {
+    font-size: 26px;
+    padding-bottom: 15px; }
+  .register-css #registered-with {
+    font-size: 20px; } }
 
 .search-css {
   min-height: 75em; }
@@ -167,14 +183,14 @@
     margin: 0 auto;
     text-align: center; }
   .search-css .search-header {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 900;
     padding-top: 20px; }
   .search-css .text-line-one, .search-css .text-line-two {
     font-size: 16px;
     font-weight: 400; }
   .search-css .text-line-one {
-    padding-top: 20px; }
+    padding-top: 16px; }
   .search-css .search-criteria, .search-css .filters {
     font-size: 16px;
     margin: 0 auto;
@@ -209,6 +225,17 @@
       display: inline-block;
       width: 100%; }
     .search-css #searchTable {
+      font-size: 20px; }
+    .search-css .text-line-one, .search-css .text-line-two {
+      font-size: 20px;
+      font-weight: 400; }
+    .search-css .search-criteria, .search-css .filters {
+      font-size: 20px; }
+    .search-css .search-criteria div {
+      text-align: left; }
+    .search-css .filters {
+      font-size: 20px; }
+    .search-css .search-criteria input {
       font-size: 20px; } }
 
 /*# sourceMappingURL=importer.css.map */

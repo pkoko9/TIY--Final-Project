@@ -22,16 +22,16 @@
 
         <form class = "filters" ng-show="tableFilters">
 
-            Availability
+            Currently Availabile?
                 <select id="availability" ng-model='filterBy1'> 
-                    <option value="!!">Both</option>
+                    <option value="!!"></option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
 
             Certification
                 <select id="disciplines" ng-model='filterBy2'>
-                    <option value="!!">All</option>
+                    <option value="!!"></option>
                     <option value="COTA">COTA</option>
                     <option value="LVN">LVN</option>
                     <option value="OTR">OTR</option>
@@ -59,8 +59,8 @@
                     "currentlyAvailable": filterBy1, "credentials": filterBy2}'>
                         <td> {{ user.firstname }}</td>
                         <td> {{ user.lastname }}</td>
-                        <td> {{ user.phone }}</td>
-                        <td> {{ user.credentials }}</td>
+                        <td><a href="tel:{{ user.phone }}"> {{user.phone}} </a></td>
+                        <td class = 'credentials'> {{ user.credentials }}</td>
                         <td class= 'availability'> {{ user.currentlyAvailable }}</td>
                         <td class= 'registrations'> {{ user.registrations }}</td>  
                     </tr>

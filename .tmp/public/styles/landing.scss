@@ -1,18 +1,5 @@
 .landing-css {
-		.nav-bar {
-			height: 3em;
-			background-color: #A7C3CF;
-			text-align: center;
-			border-top: solid black 1px;
-			border-bottom: solid black 1px;
-		}
-
-		.nav-bar a {
-			color: black;
-			font-size: 25px;
-			border-right: solid black 2px;
-			padding: 0 15px 0 15px;
-		}
+	font-family: Open Sans;
 
 		.about {
 			font-size: 20px;
@@ -34,6 +21,16 @@
 		}
 
 		.carousel-inner {
-			max-height: 500px;
+			max-height: 500px;	
 		}
+
+	@media(min-width: 768px){
+			.about {
+				font-size: 26px;
+			}
+			.home-text {
+			font-size: 20px
+			}
+	}
+
 }

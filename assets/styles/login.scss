@@ -16,15 +16,17 @@
 		}
 
 		form input {
+			font-size: 16px;
 			margin-bottom: 15px;
 		}
 
 		.login-header {
-			font-size: 24px;
+			font-size: 20px;
 			font-weight: 900;
 			text-align: center;
 			color: #30488C;
 			padding-top: 20px;
+			padding-bottom: 15px;
 		}
 
 		.failMessages {
@@ -46,8 +48,19 @@
 			form {
 				width: 300px;
 				float: none;
+				font-size: 20px;
 			}
-}
+
+			form input {
+				font-size: 20px;
+				margin-bottom: 15px;
+			}
+
+		.login-header {
+			font-size: 26px;
+			
+		}
+	}
 
 }
 

@@ -10,7 +10,7 @@
 	}
 
 	.search-header {
-		font-size: 24px;
+		font-size: 26px;
 		font-weight: 900;
 		padding-top: 20px;
 	}
@@ -20,7 +20,7 @@
 		font-weight: 400;
 	}
 	.text-line-one{
-		padding-top: 20px;
+		padding-top: 16px;
 	}
 
 	.search-criteria, .filters {
@@ -52,7 +52,7 @@
 		text-align: center;
 	}
 
-	.registrations, .zip, .availability {
+	.registrations, .zip, .availability, {
 		visibility: collapse;
 	}
 
@@ -81,7 +81,29 @@
 
 		#searchTable {
 		font-size: 20px;
-	}
+		}
+
+		.text-line-one, .text-line-two {
+		font-size: 20px;
+		font-weight: 400;
+		}
+
+		.search-criteria, .filters {
+		font-size: 20px;
+		}
+
+		.search-criteria div{
+		text-align: left;
+		}
+
+		.filters {
+		font-size: 20px;
+
+		}
+
+		.search-criteria input {
+			font-size: 20px;
+		}
 
 
 	}

@@ -41,6 +41,15 @@ angular.module('app.controllers', ['app.services'])
 				$scope.reloadButton = false;
 				$scope.registrations = '';
 	}
+
+	// $scope.sendText = function () {
+
+	// 			var textPhone = $rootScope.textNumber;
+	// 			$http.post('/text/send' + textPhone)
+	// 			.success(function(response) {
+	// 				console.log(response);
+	// 			})
+	// }
 })
 
 .controller('loginCTRL', function($scope, $http, $state, $rootScope){
@@ -131,6 +140,7 @@ angular.module('app.controllers', ['app.services'])
 	};
 	$scope.emailFail = false;
 	$scope.pwFail = false;
+	// $rootScope.textNumber = $scope.registerInput.phone 
 
 	$scope.login = function(registerInput) {
 		console.log('login');
