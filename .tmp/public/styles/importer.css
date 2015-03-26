@@ -205,10 +205,15 @@
   .search-css #searchTable {
     background-color: white;
     font-size: 16px;
-    padding-left: 20px; }
+    padding-left: 30px; }
   .search-css th {
     text-align: center; }
-  .search-css .registrations, .search-css .zip, .search-css .availability {
+  .search-css .user-credentials {
+    padding-right: 85px; }
+  .search-css .cert {
+    visibility: visible;
+    padding-left: 30px; }
+  .search-css .registrations, .search-css .zip, .search-css .availability, .search-css .credentials {
     visibility: collapse; }
   .search-css #search-button {
     background-color: #9FCC58;
@@ -219,8 +224,12 @@
     background-color: #9FCC58;
     border: none; }
   @media (min-width: 768px) {
-    .search-css .registrations, .search-css .zip, .search-css .availability {
+    .search-css .registrations, .search-css .zip, .search-css .availability, .search-css .credentials {
       visibility: visible; }
+    .search-css .credentials {
+      padding-right: 130px; }
+    .search-css .cert {
+      visibility: collapse; }
     .search-css #filter-availability, .search-css #filter-certs {
       display: inline-block;
       width: 100%; }

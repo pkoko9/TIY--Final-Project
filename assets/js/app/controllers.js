@@ -102,7 +102,7 @@ angular.module('app.controllers', ['app.services'])
 			.success(function(res){
 				// console.log(res);
 				if(res) {;
-					$state.go('landing');
+					$state.go('search');
 					console.log('successful login!')
 					$rootScope.isLoggedin = true;
 
@@ -175,7 +175,7 @@ angular.module('app.controllers', ['app.services'])
 				console.log(res);
 				$rootScope.isLoggedin = true;
 				$rootScope.userName = registerInput.username;			
-				$state.go('landing');
+				$state.go('search');
 				$scope.registerSuccess = true;
 			});
 
